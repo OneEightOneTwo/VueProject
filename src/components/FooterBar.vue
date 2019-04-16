@@ -39,26 +39,17 @@
 <script>
 import Svgicon from "./SvgIcon";
 export default {
-  data() {
-    return {};
-  },
+
   methods: {
     routerTo(str) {
       this.$store.commit("changeActive", str);
-      this.$router.push(str);
+      this.$router.push({name: str});
     }
   },
   components: {
     Svgicon
   },
-  computed: {
-    barList() {
-      return this.$store.getters.footerBar;
-    },
-    activetab() {
-      return this.$store.getters.activetab;
-    }
-  }
+  props:['barList','activetab']
 };
 </script>
 <style lang="scss">

@@ -1,10 +1,12 @@
 import Vue from "vue";
 import Router from "vue-router";
+import Index from "./views/Home/Index.vue";
+import Classify from "./views/Home/Classify.vue";
+import Discove from "./views/Home/Discove.vue";
+import ShopCar from "./views/Home/Shopcar.vue";
+import Mine from "./views/Home/Mine.vue";
+import Search from "./views/Search.vue";
 import Home from "./views/Home.vue";
-import Classify from "./views/Classify.vue";
-import Discove from "./views/Discove.vue";
-import ShopCar from "./views/Shopcar.vue";
-import Mine from "./views/Mine.vue";
 
 Vue.use(Router);
 let router = new Router({
@@ -14,32 +16,45 @@ let router = new Router({
     {
       path: "/",
       name: "root",
-      redirect: "home"
+      redirect: "/home"
     },
     {
       path: "/home",
       name: "home",
-      component: Home
+      redirect: "/home/index",
+      component: Home,
+      children: [
+        {
+          path: "index",
+          name: "index",
+          component: Index
+        },
+        {
+          path: "classify",
+          name: "classify",
+          component: Classify
+        },
+        {
+          path: "discove",
+          name: "discove",
+          component: Discove
+        },
+        {
+          path: "shopcar",
+          name: "shopcar",
+          component: ShopCar
+        },
+        {
+          path: "mine",
+          name: "mine",
+          component: Mine
+        }
+      ]
     },
     {
-      path: "/classify",
-      name: "classify",
-      component: Classify
-    },
-    {
-      path: "/discove",
-      name: "discove",
-      component: Discove
-    },
-    {
-      path: "/shopCar",
-      name: "shopCar",
-      component: ShopCar
-    },
-    {
-      path: "/mine",
-      name: "mine",
-      component: Mine
+      path: "/search",
+      name: "search",
+      component: Search
     }
   ]
 });
