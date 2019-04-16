@@ -63,7 +63,7 @@ export default {
 </script>
 <style lang="scss">
 .footer-icon {
-  font-size: 18px;
+  font-size: 22px;
 }
 .footer-icon-active {
   color: #ff4891;
@@ -83,7 +83,7 @@ a.footer-active {
   left: 0;
   right: 0;
   height: 44px;
-  margin-top: 5px;
+  padding-top: 5px;
   display: flex;
   justify-content: space-around;
   align-items: center;
