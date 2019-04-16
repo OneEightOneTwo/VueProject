@@ -1,15 +1,18 @@
 <template>
   <div>
+    <SearchBar />
     这是首页
     <SwiperSlide :swiperSlides="categoryList"/>
   </div>
 </template>
 <script>
-import SwiperSlide from '../../components/swiper-slide'
+import SwiperSlide from '../../components/swiper-slide';
+import SearchBar from "../../components/SearchBar";
 export default {
   name: "index",
   components: {
-    SwiperSlide
+    SwiperSlide,
+    SearchBar
   },
   computed:{
     categoryList(){
