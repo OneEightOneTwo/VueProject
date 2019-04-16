@@ -21,18 +21,23 @@ export default {};
 <style scoped>
 header {
   width: 100%;
-  height: 32px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  height: 40px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .left {
-  width: 185px;
+  width: 44%;
   height: 21px;
-  margin-left: 15px;
-  margin-top: 5px;
   text-align: left;
-  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 img {
+  margin: 0 5px;
   width: 55px;
   height: 14px;
   vertical-align: middle;
@@ -43,27 +48,27 @@ img {
   text-overflow: ellipsis;
   white-space: nowrap;
   display: inline-block;
-  vertical-align: middle;
   font-size: 16px;
   width: 78px;
-  height: 19px;
 }
 .buildingName {
   display: inline-block;
   width: 16px;
   height: 16px;
   line-height: 16px;
+  margin-top: -5px;
   margin-left: 2px;
   background: url(../assets/jiantou.png) no-repeat bottom center;
   background-size: 10px;
 }
 .right {
+  width: 44%;
   flex: 1;
   height: 30px;
   margin-left: 15px;
 }
 .search-nav{
-    margin-top: 5px;
+    float: right;
     width: 154px;
     height: 30px;
     line-height: 30px;
