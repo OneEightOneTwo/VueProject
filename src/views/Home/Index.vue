@@ -1,22 +1,24 @@
 <template>
   <div>
-    这是首页
+    <SearchBar />
     <div class="category_nav">
       <div class="category_slidebar">
         <SwiperSlide :swiperSlides="categoryList" />
       </div>
       <div class="showall">
-
+        
       </div>
     </div>
   </div>
 </template>
 <script>
-import SwiperSlide from "../../components/swiper-slide";
+import SwiperSlide from '../../components/swiper-slide';
+import SearchBar from "../../components/SearchBar";
 export default {
   name: "index",
   components: {
-    SwiperSlide
+    SwiperSlide,
+    SearchBar
   },
   computed: {
     categoryList() {
@@ -28,6 +30,6 @@ export default {
 <style lang="scss">
   .category_nav{
     width: 100%;
-    
+
   }
 </style>

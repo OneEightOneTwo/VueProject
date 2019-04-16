@@ -4,7 +4,12 @@
   </div>
 </template>
 <script>
-export default {};
+//头部组件
+export default {
+  name: "app",
+  components: {
+   
+  }
+};
 </script>
-<style lang="scss">
-</style>
+
