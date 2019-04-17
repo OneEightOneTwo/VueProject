@@ -8,7 +8,19 @@
           @switchCategory="switchCategory"
         />
       </div>
-      <div class="showall"></div>
+      <div class="showall" @click="isShowDropBox=true"></div>
+      <div class="category-dropbox" v-show="isShowDropBox">
+        <div class="dropbox-header">
+          全部品类
+          <i @click="isShowDropBox=false"></i>
+        </div>
+        <div class="drop-list">
+          <div class="item" v-for="(item, index) in categoryList" :key="index" @click="switchCategory(index)">
+            <img :src="item.icon" alt="" />
+            <span v-text="item.name"></span>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="mainbox">
       <div class="recommend-title" v-if="product_list.brands">
@@ -207,7 +219,9 @@ export default {
             name: "红颜草莓1斤3"
           }
         ]
-      }
+      },
+      isShowDropBox: false,
+      activeCategoryIndex: 0
     };
   },
   computed: {
@@ -218,13 +232,15 @@ export default {
   methods: {
     //切换顶部分类，改变data中的product_list,将当前数据放入localstorage
     switchCategory(index) {
+
+      this.isShowDropBox = false;
       obstate.categoryList.forEach(item => {
         item.default = 0;
       });
       obstate.categoryList[index].default = 1;
-      
-    //这部分数据是后台返回
-    this.product_list = {
+
+      //这部分数据是后台返回
+      this.product_list = {
         //通栏广告 新人必买
         banner: [
           {
@@ -291,10 +307,7 @@ export default {
             name: "红颜草莓1斤3"
           }
         ]
-      }
-
-
-
+      };
     }
   },
   created() {
@@ -303,7 +316,6 @@ export default {
 };
 </script>
 <style lang="scss">
-
 .indexbox {
   position: fixed;
   top: 0;
@@ -311,22 +323,83 @@ export default {
   right: 0;
   bottom: 49px;
   display: flex;
+  z-index: 2;
   flex-direction: column;
   .category_nav {
-  display: flex;
-  box-sizing: border-box;
-  padding: 0 10px;
-  border-bottom: 1px solid #e6e6e6;
-  width: 100%;
-  .category_slidebar {
-    width: 88%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-bottom: 1px solid #e6e6e6;
+    width: 100%;
+    .category_slidebar {
+      width: 88%;
+    }
+    .showall {
+      width: 12%;
+      height: 44px;
+      background: url("../../assets/images/arrowdown.png") no-repeat center
+        center;
+    }
+    .category-dropbox {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+      bottom: -50px;
+      z-index: 5;
+      background-color: rgba(0, 0, 0, 0.7);
+      .dropbox-header {
+        position: relative;
+        z-index: 1;
+        height: 45px;
+        background-color: #fff;
+        text-align: center;
+        line-height: 45px;
+        font-size: 16px;
+        border-bottom: 1px solid #e6e6e6;
+        i {
+          position: absolute;
+          width: 40px;
+          height: 44px;
+          right: 0;
+          top: 0;
+          background: url("../../assets/images/x.png") no-repeat center center;
+          background-size: 50%;
+        }
+      }
+      .drop-list {
+        padding-top: 5px;
+        height: 280px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #fff;
+        .item {
+          width: 33.33%;
+          height: 76px;
+          margin-bottom: 18px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 36px;
+            height: 36px;
+            margin-bottom: 5px;
+          }
+          span {
+            color: #4d4d4d;
+            font-size: 12px;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
   }
-  .showall {
-    width: 12%;
-    height: 44px;
-    background: url("../../assets/images/arrowdown.png") no-repeat center center;
-  }
-}
   .mainbox {
     flex: 1;
     overflow: auto;
@@ -394,6 +467,7 @@ export default {
     }
   }
   .productList {
+    padding: 0 10px;
   }
 }
 </style>

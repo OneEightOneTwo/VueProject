@@ -25,6 +25,7 @@ export default {
   height: 177px;
   box-sizing: border-box;
   padding: 22px 15px;
+  border-bottom: 1px solid #f5f5f5;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -34,7 +35,7 @@ export default {
   }
   .item-des {
     position: relative;
-    height: 100%;
+    // height: 100%;
     .name {
       width: 200px;
       white-space: nowrap;
@@ -77,7 +78,7 @@ export default {
     .car-img {
       position: absolute;
       right: 10px;
-      bottom: 10px;
+      bottom: 0px;
       width: 45px;
       height: 45px;
     }
