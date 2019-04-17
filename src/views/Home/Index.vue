@@ -20,7 +20,7 @@
             class="item"
             v-for="(item, index) in categoryList"
             :key="index"
-            @click="switchCategory(index)"
+            @click="switchCategory(item.category_id)"
           >
             <img :src="item.icon" alt="" />
             <span v-text="item.name"></span>
@@ -94,7 +94,7 @@ import SwiperSlide from "../../components/swiper-slide";
 import SearchBar from "../../components/SearchBar";
 import GoodListCell from "../../components/GoodListCell";
 import obstate from "../../observable.js";
-import axios from "../../axios/api.js";
+import api from "../../axios/api.js";
 export default {
   name: "index",
   components: {
@@ -104,128 +104,6 @@ export default {
   },
   data() {
     return {
-      product_list: {
-        categoryArea: {
-          //分类导航 本周新品|邀请有礼
-          lanternArea: [
-            {
-              image: "https://j-image.missfresh.cn/img_20181127211810194.png",
-              name: "本周新品"
-            },
-            {
-              image: "https://j-image.missfresh.cn/img_20181127212305318.png",
-              name: "邀请有礼"
-            },
-            {
-              image: "https://j-image.missfresh.cn/img_20181127212018922.png",
-              name: "每日签到"
-            },
-            {
-              image: "https://j-image.missfresh.cn/img_20181127212340988.png",
-              name: "凑单专区"
-            },
-            {
-              image: "https://j-image.missfresh.cn/img_20181127212459157.png",
-              name: "开通会员"
-            }
-          ],
-
-          //新人特权，每日坚果
-          tileArea: [
-            {
-              image: "https://j-image.missfresh.cn/img_20190115153812265.png"
-            },
-            {
-              image: "https://j-image.missfresh.cn/img_20190115153756830.png"
-            }
-          ]
-        },
-        //招牌  严选 安心检测
-        brands: [
-          {
-            image: "https://j-image.missfresh.cn/img_20170627185311186.png",
-            name: "优鲜严选",
-            link: "https://as-vip.missfresh.cn/v1/h5model/strict-selection"
-          },
-          {
-            image: "https://j-image.missfresh.cn/img_20170627184654084.png",
-            name: "安心检测",
-            link: "https://as-vip.missfresh.cn/v1/h5model/safeguard"
-          },
-          {
-            image: "https://j-image.missfresh.cn/img_20170718194948016.png",
-            name: "赔付保障",
-            link:
-              "https://p-h5.missfresh.cn/h5_file/467AA9256CCD5AB8F364815C073C00FD/index.html"
-          }
-        ],
-        //通栏广告 新人必买
-        banner: [
-          {
-            path:
-              "https://j-image.missfresh.cn/mis_img_20190226141252067.jpg?mryxw=750&mryxh=142"
-          }
-        ],
-        products: [
-          {
-            //商品ID
-            goodId: 1,
-            //商品图片
-            image:
-              "https://image.missfresh.cn/18ef85f85c8343a79444a4b34da400e9.jpg",
-            //活动信息
-            promotionTags: "限时秒杀",
-            //销售价格
-            newPrice: 3.9,
-            //原价
-            oldPrice: 12.9,
-            //是否卖完
-            sell_out: false,
-            //商品信息
-            subtitle: "大颗香甜 微微一笑为红颜",
-            //商品名称
-            name: "红颜草莓1斤"
-          },
-          {
-            //商品ID
-            goodId: 2,
-            //商品图片
-            image:
-              "https://image.missfresh.cn/27a1e06821bc49598a57e9883d2b4228.jpeg?iopcmd=thumbnail&type=4&width=200",
-            //活动信息
-            promotionTags: "限时秒杀",
-            //销售价格
-            newPrice: 3.9,
-            //原价
-            oldPrice: 12.9,
-            //是否卖完
-            sell_out: false,
-            //商品信息
-            subtitle: "大颗香甜 微微一笑为红颜2",
-            //商品名称
-            name: "红颜草莓1斤2"
-          },
-          {
-            //商品ID
-            goodId: 3,
-            //商品图片
-            image:
-              "https://image.missfresh.cn/c3a1dc740cf84da7a14fd3387de50063.jpg?iopcmd=thumbnail&type=4&width=200",
-            //活动信息
-            promotionTags: "限时秒杀",
-            //销售价格
-            newPrice: 3.9,
-            //原价
-            oldPrice: 12.9,
-            //是否卖完
-            sell_out: false,
-            //商品信息
-            subtitle: "大颗香甜 微微一笑为红颜3",
-            //商品名称
-            name: "红颜草莓1斤3"
-          }
-        ]
-      },
       isShowDropBox: false,
       activeCategory: ""
     };
@@ -233,31 +111,46 @@ export default {
   computed: {
     categoryList() {
       return obstate.categoryList;
+    },
+    product_list() {
+      return obstate.categorydata[this.activeCategory];
     }
   },
   methods: {
     //切换顶部分类，改变data中的product_list
-    switchCategory(id) {
+    async switchCategory(id) {
+      this.isShowDropBox = false;
+      // let res = await api.get("http://localhos:8080/category", {
+      //   category_id: id,
+      //   page: 1,
+      //   num: 10
+      // });
+
+      // if (res.status >= 300 && res.statue < 400) {
+      //   this.activeCategory = id;
+      // } else if (res.status == 200) {
+      //   obstate.categorydata[id] = res.product_list;
+      //   this.activeCategory = id;
+      // }
+
       this.activeCategory = id;
     }
   },
   watch: {
-    activeCategory(newid, oldid) {
-      this.product_list = obstate.categorydata[newid];
-    }
+    
   },
   async created() {
     //初始化请求分类以及默认分类的商品数据
-    // let data = await axiso.get("http://localhost:8080/index/init", {
+    // let res = await api.get("http://localhost:8080/index/init", {
     //   lat: "",
     //   lng: ""
     // });
-    // obstate.categoryList = data.category_list;
+    // obstate.categoryList = res.category_list;
     // 请求接口，获取index页面数据
     for (let i = 0; i < obstate.categoryList.length; i++) {
       if (obstate.categoryList[i].default === 1) {
         this.activeCategory = obstate.categoryList[i].category_id;
-        // obstate.categorydata[obstate.categoryList[i]] = data.product_list;
+        // obstate.categorydata[obstate.categoryList[i]] = res.product_list;
         break;
       }
     }

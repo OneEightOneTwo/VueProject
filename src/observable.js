@@ -231,8 +231,11 @@ const state = Vue.observable({
           //商品名称
           name: "红颜草莓1斤3"
         }
-      ]
+      ],
+      page: 1,
+      num: 10
     },
+
     fruit: {
       //通栏广告 新人必买
       banner: [
@@ -299,7 +302,9 @@ const state = Vue.observable({
           //商品名称
           name: "红颜草莓1斤3"
         }
-      ]
+      ],
+      page: 1,
+      num: 10
     }
   }
 });
