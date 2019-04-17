@@ -89,7 +89,7 @@ export default {};
       margin-left: 10px;
       margin-top: 10px;
       background: white;
-      border: 1px solid gray;
+      border: 1px solid rgb(245, 243, 243);
       border-radius: 10px;
       .recommend-goods-img {
         width: 100%;

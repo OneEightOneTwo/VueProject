@@ -73,6 +73,8 @@ export default {
 .shopCar_members {
   width: 100%;
   height: 38px;
+  padding-left: 10px;
+  box-sizing: border-box;
   background: rgb(247, 234, 217);
   display: flex;
   align-items: center;
@@ -99,7 +101,7 @@ export default {
 .shopCar-others {
   width: 100%;
   height: 20px;
-  background: rgb(228, 227, 227);
+  background: rgb(245, 242, 242);
 }
 /* 次日送达 */
 .shopCar_wrap {
@@ -148,7 +150,7 @@ export default {
 .shopcarAds {
   width: 100%;
   height: 100%;
-  background: rgb(207, 206, 206);
+  background: rgb(245, 243, 243);
   padding: 10px 0;
   box-sizing: border-box;
 }
@@ -157,7 +159,7 @@ export default {
 .shopcar-recommend {
   width: 100%;
   height: 100%;
-  background: rgb(207, 206, 206);
+  background: rgb(245, 243, 243);
   padding: 10px 0;
   box-sizing: border-box;
   h2 {

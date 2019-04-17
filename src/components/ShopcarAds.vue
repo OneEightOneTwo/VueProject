@@ -26,7 +26,7 @@ export default {};
   height: 70px;
   margin: auto;
   background: white;
-  border: 1px solid gray;
+  border: 1px solid rgb(245, 243, 243);
   border-radius: 10px;
   .shopcar-ads-img {
     width: 80%;
@@ -35,7 +35,7 @@ export default {};
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom:1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
     img {
       display: inline-block;
       width: 70px;

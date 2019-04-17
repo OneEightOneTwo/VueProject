@@ -89,7 +89,7 @@ export default {};
           height: 16px;
           font-size: 12px;
           color: rgb(218, 183, 183);
-          border: 1px solid rgb(218, 183, 183);
+          border: 1px solid rgb(245, 243, 243);
         }
         .buybox-oldprice {
           box-sizing: border-box;

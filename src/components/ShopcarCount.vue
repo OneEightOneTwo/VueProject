@@ -42,7 +42,7 @@ export default {};
   margin-top: 10px;
   margin-bottom: 10px;
   background: white;
-  border: 1px solid gray;
+  border: 1px solid rgb(245, 243, 243);
   border-radius: 10px;
   padding-left: 16px;
   padding-right: 16px;

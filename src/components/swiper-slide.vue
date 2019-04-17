@@ -6,7 +6,8 @@
       style="width:auto"
       ><span
         class="swiper-text"
-        :class="{ 'swiper-text-active': slide.default }"
+        :class="{ 'swiper-text-active': slide.category_id == activeCategory }"
+        @click="switchCategory(slide.category_id)"
         >{{ slide.name }}</span
       ></swiper-slide
     >
@@ -34,7 +35,12 @@ export default {
       //   swiperSlides: [1, 2, 3, 4, 5]
     };
   },
-  props: ["swiperSlides"]
+  props: ["swiperSlides","activeCategory"],
+  methods:{
+      switchCategory(index){
+          this.$emit('switchCategory',index);
+      }
+  }
 };
 </script>
 <style lang="scss">
