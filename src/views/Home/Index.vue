@@ -204,6 +204,9 @@ export default {
     changeCategory(index) {
       this.$store.commit("changeCategory", index);
     }
+  },
+  created(){
+    
   }
 };
 </script>
