@@ -6,6 +6,7 @@ import Discove from "./views/Home/Discove.vue";
 import ShopCar from "./views/Home/Shopcar.vue";
 import Mine from "./views/Home/Mine.vue";
 import Search from "./views/Search.vue";
+import Login from "./views/Login.vue";
 import Home from "./views/Home.vue";
 
 Vue.use(Router);
@@ -55,6 +56,11 @@ let router = new Router({
       path: "/search",
       name: "search",
       component: Search
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: Login
     }
   ]
 });
