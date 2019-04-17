@@ -5,6 +5,7 @@ import store from "./store";
 import "./assets/js/svgiconfont.js";
 import "./assets/css/reset-phone.css";
 import mockdata from "../mock/mockjs.JS";
+
 Vue.config.productionTip = false;
 
 new Vue({

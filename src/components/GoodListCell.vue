@@ -1,7 +1,7 @@
 <template>
   <div class="good-item-cell">
     <div class="item-image">
-      <img :src="data.image" :alt="data.name" />
+      <img :src="data.image" :alt="data.name" :key="data.image"/>
     </div>
     <div class="item-des">
       <p class="name" v-text="data.name"></p>

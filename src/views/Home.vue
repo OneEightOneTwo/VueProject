@@ -3,22 +3,15 @@
     <keep-alive>
       <router-view />
     </keep-alive>
-    <VfooterBar :barList="barList" :activetab="activetab" />
+    <VfooterBar />
   </div>
 </template>
 <script>
 import VfooterBar from "../components/FooterBar";
+import obstate from "../observable.js";
 export default {
   components: {
     VfooterBar
-  },
-  computed: {
-    barList() {
-      return this.$store.getters.footerBar;
-    },
-    activetab() {
-      return this.$store.getters.activetab;
-    }
   }
 };
 </script>

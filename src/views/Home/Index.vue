@@ -5,55 +5,64 @@
       <div class="category_slidebar">
         <SwiperSlide
           :swiperSlides="categoryList"
-          @changeCategory="changeCategory"
+          @switchCategory="switchCategory"
         />
       </div>
       <div class="showall"></div>
     </div>
     <div class="mainbox">
-      <div class="recommend-title">
+      <div class="recommend-title" v-if="product_list.brands">
         <div
           class="recommend-text"
-          v-for="(item, index) in getBrands"
+          v-for="(item, index) in product_list.brands"
           :key="index"
         >
           <img :src="item.image" />
           <em>{{ item.name }}</em>
         </div>
       </div>
-      <div class="category-border"><div></div></div>
-      <div class="lantern-wrap">
-        <div
-          class="lantern-item"
-          v-for="(item, index) in getLanternList"
-          :key="index"
-        >
-          <div class="lantern-item-img">
-            <img
-              data-v-f6a0fd68=""
-              :src="item.image"
-              class="image-view"
-              style=""
-            />
+      <div class="categoryArea" v-if="product_list.categoryArea">
+        <div class="category-border">
+          <div></div>
+        </div>
+        <div class="lantern-wrap" v-if="product_list.categoryArea.lanternArea">
+          <div
+            class="lantern-item"
+            v-for="(item, index) in product_list.categoryArea.lanternArea"
+            :key="index"
+          >
+            <div class="lantern-item-img">
+              <img
+                data-v-f6a0fd68=""
+                :src="item.image"
+                class="image-view"
+                style=""
+              />
+            </div>
+            <p>{{ item.name }}</p>
           </div>
-          <p>{{ item.name }}</p>
+        </div>
+        <div class="card-wrap" v-if="product_list.categoryArea.tileArea">
+          <img
+            :src="item.image"
+            alt=""
+            v-for="(item, index) in product_list.categoryArea.tileArea"
+            :key="index"
+          />
         </div>
       </div>
-      <div class="card-wrap">
+      <div class="banner-img" v-if="product_list.banner">
         <img
-          :src="item.image"
+          :src="item.path"
           alt=""
-          v-for="(item, index) in getcardList"
-          :key="index"
+          v-for="(item, index) in product_list.banner"
+          :key="item.path"
         />
       </div>
-      <div class="banner-img">
-        <img :src="getBannerImg" alt="" />
-      </div>
-      <div class="productList">
+      <div class="productList" v-if="product_list.products">
         <div
           class="product-item"
-          v-for="(item, index) in goodlist"
+          v-for="(item, index) in product_list.products"
           :key="index"
         >
           <GoodListCell :data="item" />
@@ -66,6 +75,8 @@
 import SwiperSlide from "../../components/swiper-slide";
 import SearchBar from "../../components/SearchBar";
 import GoodListCell from "../../components/GoodListCell";
+import obstate from "../../observable.js";
+
 export default {
   name: "index",
   components: {
@@ -73,140 +84,221 @@ export default {
     SearchBar,
     GoodListCell
   },
+  data() {
+    return {
+      product_list: {
+        categoryArea: {
+          //分类导航 本周新品|邀请有礼
+          lanternArea: [
+            {
+              image: "https://j-image.missfresh.cn/img_20181127211810194.png",
+              name: "本周新品"
+            },
+            {
+              image: "https://j-image.missfresh.cn/img_20181127212305318.png",
+              name: "邀请有礼"
+            },
+            {
+              image: "https://j-image.missfresh.cn/img_20181127212018922.png",
+              name: "每日签到"
+            },
+            {
+              image: "https://j-image.missfresh.cn/img_20181127212340988.png",
+              name: "凑单专区"
+            },
+            {
+              image: "https://j-image.missfresh.cn/img_20181127212459157.png",
+              name: "开通会员"
+            }
+          ],
+
+          //新人特权，每日坚果
+          tileArea: [
+            {
+              image: "https://j-image.missfresh.cn/img_20190115153812265.png"
+            },
+            {
+              image: "https://j-image.missfresh.cn/img_20190115153756830.png"
+            }
+          ]
+        },
+        //招牌  严选 安心检测
+        brands: [
+          {
+            image: "https://j-image.missfresh.cn/img_20170627185311186.png",
+            name: "优鲜严选",
+            link: "https://as-vip.missfresh.cn/v1/h5model/strict-selection"
+          },
+          {
+            image: "https://j-image.missfresh.cn/img_20170627184654084.png",
+            name: "安心检测",
+            link: "https://as-vip.missfresh.cn/v1/h5model/safeguard"
+          },
+          {
+            image: "https://j-image.missfresh.cn/img_20170718194948016.png",
+            name: "赔付保障",
+            link:
+              "https://p-h5.missfresh.cn/h5_file/467AA9256CCD5AB8F364815C073C00FD/index.html"
+          }
+        ],
+        //通栏广告 新人必买
+        banner: [
+          {
+            path:
+              "https://j-image.missfresh.cn/mis_img_20190226141252067.jpg?mryxw=750&mryxh=142"
+          }
+        ],
+        products: [
+          {
+            //商品ID
+            goodId: 1,
+            //商品图片
+            image:
+              "https://image.missfresh.cn/18ef85f85c8343a79444a4b34da400e9.jpg",
+            //活动信息
+            promotionTags: "限时秒杀",
+            //销售价格
+            newPrice: 3.9,
+            //原价
+            oldPrice: 12.9,
+            //是否卖完
+            sell_out: false,
+            //商品信息
+            subtitle: "大颗香甜 微微一笑为红颜",
+            //商品名称
+            name: "红颜草莓1斤"
+          },
+          {
+            //商品ID
+            goodId: 2,
+            //商品图片
+            image:
+              "https://image.missfresh.cn/27a1e06821bc49598a57e9883d2b4228.jpeg?iopcmd=thumbnail&type=4&width=200",
+            //活动信息
+            promotionTags: "限时秒杀",
+            //销售价格
+            newPrice: 3.9,
+            //原价
+            oldPrice: 12.9,
+            //是否卖完
+            sell_out: false,
+            //商品信息
+            subtitle: "大颗香甜 微微一笑为红颜2",
+            //商品名称
+            name: "红颜草莓1斤2"
+          },
+          {
+            //商品ID
+            goodId: 3,
+            //商品图片
+            image:
+              "https://image.missfresh.cn/c3a1dc740cf84da7a14fd3387de50063.jpg?iopcmd=thumbnail&type=4&width=200",
+            //活动信息
+            promotionTags: "限时秒杀",
+            //销售价格
+            newPrice: 3.9,
+            //原价
+            oldPrice: 12.9,
+            //是否卖完
+            sell_out: false,
+            //商品信息
+            subtitle: "大颗香甜 微微一笑为红颜3",
+            //商品名称
+            name: "红颜草莓1斤3"
+          }
+        ]
+      }
+    };
+  },
   computed: {
-    goodlist() {
-      let arr = [
-        {
-          //商品ID
-          goodId: 1,
-          //商品图片
-          image:
-            "https://image.missfresh.cn/18ef85f85c8343a79444a4b34da400e9.jpg",
-          //活动信息
-          promotionTags: "限时秒杀",
-          //销售价格
-          newPrice: 3.9,
-          //原价
-          oldPrice: 12.9,
-          //是否卖完
-          sell_out: false,
-          //商品信息
-          subtitle: "大颗香甜 微微一笑为红颜",
-          //商品名称
-          name: "红颜草莓1斤"
-        },
-        {
-          //商品ID
-          goodId: 2,
-          //商品图片
-          image:
-            "https://image.missfresh.cn/27a1e06821bc49598a57e9883d2b4228.jpeg?iopcmd=thumbnail&type=4&width=200",
-          //活动信息
-          promotionTags: "限时秒杀",
-          //销售价格
-          newPrice: 3.9,
-          //原价
-          oldPrice: 12.9,
-          //是否卖完
-          sell_out: false,
-          //商品信息
-          subtitle: "大颗香甜 微微一笑为红颜2",
-          //商品名称
-          name: "红颜草莓1斤2"
-        },
-        {
-          //商品ID
-          goodId: 3,
-          //商品图片
-          image:
-            "https://image.missfresh.cn/c3a1dc740cf84da7a14fd3387de50063.jpg?iopcmd=thumbnail&type=4&width=200",
-          //活动信息
-          promotionTags: "限时秒杀",
-          //销售价格
-          newPrice: 3.9,
-          //原价
-          oldPrice: 12.9,
-          //是否卖完
-          sell_out: false,
-          //商品信息
-          subtitle: "大颗香甜 微微一笑为红颜3",
-          //商品名称
-          name: "红颜草莓1斤3"
-        }
-      ];
-      return arr;
-    },
     categoryList() {
-      return this.$store.getters.categoryList;
-    },
-    getBrands() {
-      let arr = [
-        {
-          image: "https://j-image.missfresh.cn/img_20170627185311186.png",
-          name: "优鲜严选",
-          link: "https://as-vip.missfresh.cn/v1/h5model/strict-selection"
-        },
-        {
-          image: "https://j-image.missfresh.cn/img_20170627184654084.png",
-          name: "安心检测",
-          link: "https://as-vip.missfresh.cn/v1/h5model/safeguard"
-        },
-        {
-          image: "https://j-image.missfresh.cn/img_20170718194948016.png",
-          name: "赔付保障",
-          link:
-            "https://p-h5.missfresh.cn/h5_file/467AA9256CCD5AB8F364815C073C00FD/index.html"
-        }
-      ];
-      return arr;
-    },
-    getLanternList() {
-      let arr = [
-        {
-          image: "https://j-image.missfresh.cn/img_20181127211810194.png",
-          name: "本周新品"
-        },
-        {
-          image: "https://j-image.missfresh.cn/img_20181127212305318.png",
-          name: "邀请有礼"
-        },
-        {
-          image: "https://j-image.missfresh.cn/img_20181127212018922.png",
-          name: "每日签到"
-        },
-        {
-          image: "https://j-image.missfresh.cn/img_20181127212340988.png",
-          name: "凑单专区"
-        },
-        {
-          image: "https://j-image.missfresh.cn/img_20181127212459157.png",
-          name: "开通会员"
-        }
-      ];
-      return arr;
-    },
-    getcardList() {
-      let arr = [
-        {
-          image: "https://j-image.missfresh.cn/img_20190115153812265.png"
-        },
-        {
-          image: "https://j-image.missfresh.cn/img_20190115153756830.png"
-        }
-      ];
-      return arr;
-    },
-    getBannerImg() {
-      return "https://j-image.missfresh.cn/mis_img_20190226141252067.jpg?mryxw=750&mryxh=142";
+      return obstate.categoryList;
     }
   },
   methods: {
-    changeCategory(index) {
-      this.$store.commit("changeCategory", index);
+    //切换顶部分类，改变data中的product_list,将当前数据放入localstorage
+    switchCategory(index) {
+      obstate.categoryList.forEach(item => {
+        item.default = 0;
+      });
+      obstate.categoryList[index].default = 1;
+      
+    //这部分数据是后台返回
+    this.product_list = {
+        //通栏广告 新人必买
+        banner: [
+          {
+            path:
+              "https://j-image.missfresh.cn/mis_img_20190416105702514.jpg?mryxw=1124&mryxh=270"
+          }
+        ],
+        products: [
+          {
+            //商品ID
+            goodId: 1,
+            //商品图片
+            image:
+              "https://image.missfresh.cn/29217a5afe6e4ae29e845655df87e865.jpg?iopcmd=thumbnail&type=4&width=200",
+            //活动信息
+            promotionTags: "限时秒杀",
+            //销售价格
+            newPrice: 3.9,
+            //原价
+            oldPrice: 12.9,
+            //是否卖完
+            sell_out: false,
+            //商品信息
+            subtitle: "aaaaaaaa",
+            //商品名称
+            name: "红颜草莓1斤aaaaaaaaaaaaaa"
+          },
+          {
+            //商品ID
+            goodId: 2,
+            //商品图片
+            image:
+              "https://image.missfresh.cn/27a1e06821bc49598a57e9883d2b4228.jpeg?iopcmd=thumbnail&type=4&width=200",
+            //活动信息
+            promotionTags: "限时秒杀",
+            //销售价格
+            newPrice: 3.9,
+            //原价
+            oldPrice: 12.9,
+            //是否卖完
+            sell_out: false,
+            //商品信息
+            subtitle: "大颗香甜 微微一笑为红颜2",
+            //商品名称
+            name: "红颜草莓1斤2"
+          },
+          {
+            //商品ID
+            goodId: 3,
+            //商品图片
+            image:
+              "https://image.missfresh.cn/c3a1dc740cf84da7a14fd3387de50063.jpg?iopcmd=thumbnail&type=4&width=200",
+            //活动信息
+            promotionTags: "限时秒杀",
+            //销售价格
+            newPrice: 3.9,
+            //原价
+            oldPrice: 12.9,
+            //是否卖完
+            sell_out: false,
+            //商品信息
+            subtitle: "大颗香甜 微微一笑为红颜3",
+            //商品名称
+            name: "红颜草莓1斤3"
+          }
+        ]
+      }
+
+
+
     }
   },
-  created(){
-    
+  created() {
+    //请求接口，获取index页面数据
   }
 };
 </script>
@@ -287,6 +379,7 @@ export default {
     }
     .card-wrap {
       padding: 0 15px;
+      margin-bottom: 10px;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -296,7 +389,7 @@ export default {
       }
     }
     .banner-img {
-      margin-top: 10px;
+      height: 90px;
     }
   }
   .productList {
