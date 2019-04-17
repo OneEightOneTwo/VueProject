@@ -35,7 +35,9 @@ body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, d
     margin: 0;
     padding: 0;
 }
-
+*{
+    box-sizing: border-box;
+}
 
 
 em, i {

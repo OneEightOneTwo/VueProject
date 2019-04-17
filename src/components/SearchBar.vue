@@ -25,12 +25,25 @@ header {
   box-sizing: border-box;
   height: 40px;
   display: flex;
+<<<<<<< HEAD
+  margin-bottom: 10px;
+=======
   justify-content: space-between;
   align-items: center;
+>>>>>>> a6959cfd8fce764ed27b209deeac57c913f4304b
 }
 .left {
   width: 44%;
   height: 21px;
+<<<<<<< HEAD
+  margin-left: 15px;
+  margin-top: 10px;
+  flex: 2;
+  display: flex;
+}
+img {
+  margin-top: 3px;
+=======
   text-align: left;
   display: flex;
   justify-content: space-around;
@@ -38,18 +51,25 @@ header {
 }
 img {
   margin: 0 5px;
+>>>>>>> a6959cfd8fce764ed27b209deeac57c913f4304b
   width: 55px;
   height: 14px;
   vertical-align: middle;
+  flex:2.5;
 }
 .locationNav {
-  margin-left: 5px;
+  margin-left: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   display: inline-block;
   font-size: 16px;
   width: 78px;
+<<<<<<< HEAD
+  height: 19px;
+  flex:4;
+=======
+>>>>>>> a6959cfd8fce764ed27b209deeac57c913f4304b
 }
 .buildingName {
   display: inline-block;
@@ -60,6 +80,7 @@ img {
   margin-left: 2px;
   background: url(../assets/jiantou.png) no-repeat bottom center;
   background-size: 10px;
+  flex:1;
 }
 .right {
   width: 44%;
@@ -89,6 +110,5 @@ img {
     color: #C6C6C6;
     margin-left: 10px;
 }
-
 </style>
 
