@@ -6,16 +6,22 @@
         <SwiperSlide
           :swiperSlides="categoryList"
           @switchCategory="switchCategory"
+          :activeCategory="activeCategory"
         />
       </div>
-      <div class="showall" @click="isShowDropBox=true"></div>
+      <div class="showall" @click="isShowDropBox = true"></div>
       <div class="category-dropbox" v-show="isShowDropBox">
         <div class="dropbox-header">
           全部品类
-          <i @click="isShowDropBox=false"></i>
+          <i @click="isShowDropBox = false"></i>
         </div>
         <div class="drop-list">
-          <div class="item" v-for="(item, index) in categoryList" :key="index" @click="switchCategory(index)">
+          <div
+            class="item"
+            v-for="(item, index) in categoryList"
+            :key="index"
+            @click="switchCategory(index)"
+          >
             <img :src="item.icon" alt="" />
             <span v-text="item.name"></span>
           </div>
@@ -88,7 +94,7 @@ import SwiperSlide from "../../components/swiper-slide";
 import SearchBar from "../../components/SearchBar";
 import GoodListCell from "../../components/GoodListCell";
 import obstate from "../../observable.js";
-
+import axios from "../../axios/api.js";
 export default {
   name: "index",
   components: {
@@ -221,7 +227,7 @@ export default {
         ]
       },
       isShowDropBox: false,
-      activeCategoryIndex: 0
+      activeCategory: ""
     };
   },
   computed: {
@@ -230,88 +236,31 @@ export default {
     }
   },
   methods: {
-    //切换顶部分类，改变data中的product_list,将当前数据放入localstorage
-    switchCategory(index) {
-
-      this.isShowDropBox = false;
-      obstate.categoryList.forEach(item => {
-        item.default = 0;
-      });
-      obstate.categoryList[index].default = 1;
-
-      //这部分数据是后台返回
-      this.product_list = {
-        //通栏广告 新人必买
-        banner: [
-          {
-            path:
-              "https://j-image.missfresh.cn/mis_img_20190416105702514.jpg?mryxw=1124&mryxh=270"
-          }
-        ],
-        products: [
-          {
-            //商品ID
-            goodId: 1,
-            //商品图片
-            image:
-              "https://image.missfresh.cn/29217a5afe6e4ae29e845655df87e865.jpg?iopcmd=thumbnail&type=4&width=200",
-            //活动信息
-            promotionTags: "限时秒杀",
-            //销售价格
-            newPrice: 3.9,
-            //原价
-            oldPrice: 12.9,
-            //是否卖完
-            sell_out: false,
-            //商品信息
-            subtitle: "aaaaaaaa",
-            //商品名称
-            name: "红颜草莓1斤aaaaaaaaaaaaaa"
-          },
-          {
-            //商品ID
-            goodId: 2,
-            //商品图片
-            image:
-              "https://image.missfresh.cn/e933b18b9d4541fbbd721eb0ddcf705e.jpg?iopcmd=thumbnail&type=4&width=200",
-            //活动信息
-            promotionTags: "限时秒杀",
-            //销售价格
-            newPrice: 3.9,
-            //原价
-            oldPrice: 12.9,
-            //是否卖完
-            sell_out: false,
-            //商品信息
-            subtitle: "大颗香甜 微微一笑为红颜2bbbbb",
-            //商品名称
-            name: "红颜草莓1斤2"
-          },
-          {
-            //商品ID
-            goodId: 3,
-            //商品图片
-            image:
-              "https://fms-image.missfresh.cn/b0084f8c9a2a4b15a4ae87aeb71c2abc.jpg?iopcmd=thumbnail&type=4&width=200",
-            //活动信息
-            promotionTags: "限时秒杀",
-            //销售价格
-            newPrice: 3.9,
-            //原价
-            oldPrice: 12.9,
-            //是否卖完
-            sell_out: false,
-            //商品信息
-            subtitle: "大颗香甜 微微一笑为红颜3",
-            //商品名称
-            name: "红颜草莓1斤3"
-          }
-        ]
-      };
+    //切换顶部分类，改变data中的product_list
+    switchCategory(id) {
+      this.activeCategory = id;
     }
   },
-  created() {
-    //请求接口，获取index页面数据
+  watch: {
+    activeCategory(newid, oldid) {
+      this.product_list = obstate.categorydata[newid];
+    }
+  },
+  async created() {
+    //初始化请求分类以及默认分类的商品数据
+    // let data = await axiso.get("http://localhost:8080/index/init", {
+    //   lat: "",
+    //   lng: ""
+    // });
+    // obstate.categoryList = data.category_list;
+    // 请求接口，获取index页面数据
+    for (let i = 0; i < obstate.categoryList.length; i++) {
+      if (obstate.categoryList[i].default === 1) {
+        this.activeCategory = obstate.categoryList[i].category_id;
+        // obstate.categorydata[obstate.categoryList[i]] = data.product_list;
+        break;
+      }
+    }
   }
 };
 </script>
