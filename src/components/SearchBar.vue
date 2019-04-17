@@ -23,22 +23,25 @@ header {
   width: 100%;
   height: 32px;
   display: flex;
+  margin-bottom: 10px;
 }
 .left {
   width: 185px;
   height: 21px;
   margin-left: 15px;
-  margin-top: 5px;
-  text-align: left;
-  flex: 1;
+  margin-top: 10px;
+  flex: 2;
+  display: flex;
 }
 img {
+  margin-top: 3px;
   width: 55px;
   height: 14px;
   vertical-align: middle;
+  flex:2.5;
 }
 .locationNav {
-  margin-left: 5px;
+  margin-left: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -47,6 +50,7 @@ img {
   font-size: 16px;
   width: 78px;
   height: 19px;
+  flex:4;
 }
 .buildingName {
   display: inline-block;
@@ -56,6 +60,7 @@ img {
   margin-left: 2px;
   background: url(../assets/jiantou.png) no-repeat bottom center;
   background-size: 10px;
+  flex:1;
 }
 .right {
   flex: 1;
@@ -84,6 +89,5 @@ img {
     color: #C6C6C6;
     margin-left: 10px;
 }
-
 </style>
 
