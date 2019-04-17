@@ -7,7 +7,7 @@
       ><span
         class="swiper-text"
         :class="{ 'swiper-text-active': slide.default }"
-        @click="changeCategory(index)"
+        @click="switchCategory(index)"
         >{{ slide.name }}</span
       ></swiper-slide
     >
@@ -37,8 +37,8 @@ export default {
   },
   props: ["swiperSlides"],
   methods:{
-      changeCategory(index){
-          this.$emit('changeCategory',index);
+      switchCategory(index){
+          this.$emit('switchCategory',index);
       }
   }
 };

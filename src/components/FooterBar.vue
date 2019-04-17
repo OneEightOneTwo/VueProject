@@ -38,18 +38,26 @@
 </template>
 <script>
 import Svgicon from "./SvgIcon";
-export default {
+import obstate from "../observable.js";
 
+export default {
   methods: {
     routerTo(str) {
-      this.$store.commit("changeActive", str);
-      this.$router.push({name: str});
+      obstate.footerBar.activeItem = str;
+      this.$router.push({ name: str });
     }
   },
   components: {
     Svgicon
   },
-  props:['barList','activetab']
+  computed: {
+    barList() {
+      return obstate.footerBar.itemList;
+    },
+    activetab() {
+      return obstate.footerBar.activeItem;
+    }
+  }
 };
 </script>
 <style lang="scss">

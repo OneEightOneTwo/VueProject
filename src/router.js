@@ -9,6 +9,7 @@ import Search from "./views/Search.vue";
 import Login from "./views/Login.vue";
 import Home from "./views/Home.vue";
 
+//TODO 访问路由时再切换footbar的状态
 Vue.use(Router);
 let router = new Router({
   mode: "hash",
