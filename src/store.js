@@ -129,6 +129,12 @@ export default new Vuex.Store({
   mutations: {
     changeActive(state, str) {
       state.activetab = str;
+    },
+    changeCategory(state, index) {
+      state.category_list.forEach(item => {
+        item.default = 0;
+      });
+      state.category_list[index].default = 1;
     }
   }
 });

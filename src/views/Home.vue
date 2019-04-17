@@ -1,6 +1,8 @@
 <template>
   <div>
-    <router-view />
+    <keep-alive>
+      <router-view />
+    </keep-alive>
     <VfooterBar :barList="barList" :activetab="activetab" />
   </div>
 </template>

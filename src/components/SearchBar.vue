@@ -21,13 +21,21 @@ export default {};
 <style scoped>
 header {
   width: 100%;
-  height: 32px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  height: 40px;
   display: flex;
+<<<<<<< HEAD
   margin-bottom: 10px;
+=======
+  justify-content: space-between;
+  align-items: center;
+>>>>>>> a6959cfd8fce764ed27b209deeac57c913f4304b
 }
 .left {
-  width: 185px;
+  width: 44%;
   height: 21px;
+<<<<<<< HEAD
   margin-left: 15px;
   margin-top: 10px;
   flex: 2;
@@ -35,6 +43,15 @@ header {
 }
 img {
   margin-top: 3px;
+=======
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+img {
+  margin: 0 5px;
+>>>>>>> a6959cfd8fce764ed27b209deeac57c913f4304b
   width: 55px;
   height: 14px;
   vertical-align: middle;
@@ -46,29 +63,33 @@ img {
   text-overflow: ellipsis;
   white-space: nowrap;
   display: inline-block;
-  vertical-align: middle;
   font-size: 16px;
   width: 78px;
+<<<<<<< HEAD
   height: 19px;
   flex:4;
+=======
+>>>>>>> a6959cfd8fce764ed27b209deeac57c913f4304b
 }
 .buildingName {
   display: inline-block;
   width: 16px;
   height: 16px;
   line-height: 16px;
+  margin-top: -5px;
   margin-left: 2px;
   background: url(../assets/jiantou.png) no-repeat bottom center;
   background-size: 10px;
   flex:1;
 }
 .right {
+  width: 44%;
   flex: 1;
   height: 30px;
   margin-left: 15px;
 }
 .search-nav{
-    margin-top: 5px;
+    float: right;
     width: 154px;
     height: 30px;
     line-height: 30px;
