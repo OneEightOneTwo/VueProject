@@ -86,6 +86,7 @@
           <GoodListCell :data="item" />
         </div>
       </div>
+      <div class="showall"></div>
     </div>
   </div>
 </template>
