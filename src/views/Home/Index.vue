@@ -257,7 +257,7 @@ export default {
             goodId: 2,
             //商品图片
             image:
-              "https://image.missfresh.cn/27a1e06821bc49598a57e9883d2b4228.jpeg?iopcmd=thumbnail&type=4&width=200",
+              "https://image.missfresh.cn/e933b18b9d4541fbbd721eb0ddcf705e.jpg?iopcmd=thumbnail&type=4&width=200",
             //活动信息
             promotionTags: "限时秒杀",
             //销售价格
@@ -267,7 +267,7 @@ export default {
             //是否卖完
             sell_out: false,
             //商品信息
-            subtitle: "大颗香甜 微微一笑为红颜2",
+            subtitle: "大颗香甜 微微一笑为红颜2bbbbb",
             //商品名称
             name: "红颜草莓1斤2"
           },
@@ -276,7 +276,7 @@ export default {
             goodId: 3,
             //商品图片
             image:
-              "https://image.missfresh.cn/c3a1dc740cf84da7a14fd3387de50063.jpg?iopcmd=thumbnail&type=4&width=200",
+              "https://fms-image.missfresh.cn/b0084f8c9a2a4b15a4ae87aeb71c2abc.jpg?iopcmd=thumbnail&type=4&width=200",
             //活动信息
             promotionTags: "限时秒杀",
             //销售价格
@@ -303,7 +303,16 @@ export default {
 };
 </script>
 <style lang="scss">
-.category_nav {
+
+.indexbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 49px;
+  display: flex;
+  flex-direction: column;
+  .category_nav {
   display: flex;
   box-sizing: border-box;
   padding: 0 10px;
@@ -318,14 +327,6 @@ export default {
     background: url("../../assets/images/arrowdown.png") no-repeat center center;
   }
 }
-.indexbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 49px;
-  display: flex;
-  flex-direction: column;
   .mainbox {
     flex: 1;
     overflow: auto;
