@@ -47,11 +47,11 @@ export default {};
     display: flex;
     flex-direction: row;
     .buybox-checkbox {
-      width: 44px;
+      width: 12%;
       height: 74px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       img {
         display: inline-block;
         width: 26px;
@@ -59,21 +59,27 @@ export default {};
       }
     }
     .buybox-main {
-      width: 312px;
+      width: 88%;
       height: 74px;
       display: flex;
 
       .buybox-img {
-        display: inline-block;
-        width: 70px;
+        width: 16%;
         height: 70px;
+        img {
+          display: inline-block;
+          width: 70px;
+          height: 70px;
+        }
       }
       .buybox-cons {
+        width: 84%;
         display: flex;
         flex-direction: column;
-        padding-left: 12px;
+        padding-left: 30px;
+        box-sizing: border-box;
         .buybox-title {
-          width: 212px;
+          width: 100%;
           height: 20px;
           font-size: 14px;
           color: black;
@@ -111,11 +117,12 @@ export default {};
           display: flex;
           flex-direction: row;
           .buybox-saleprice {
-            width: 150px;
+            width: 66%;
             font-size: 16px;
             color: crimson;
           }
           .buybox-nums {
+            width: 34%;
             height: 22px;
             .cutnum {
               display: inline-block;

@@ -1,18 +1,16 @@
 <template>
   <div>
-    <SearchBar />
+    <SearchBar/>
     <div class="category_nav">
       <div class="category_slidebar">
-        <SwiperSlide :swiperSlides="categoryList" />
+        <SwiperSlide :swiperSlides="categoryList"/>
       </div>
-      <div class="showall">
-        
-      </div>
+      <div class="showall"></div>
     </div>
   </div>
 </template>
 <script>
-import SwiperSlide from '../../components/swiper-slide';
+import SwiperSlide from "../../components/swiper-slide";
 import SearchBar from "../../components/SearchBar";
 export default {
   name: "index",
@@ -28,8 +26,7 @@ export default {
 };
 </script>
 <style lang="scss">
-  .category_nav{
-    width: 100%;
-
-  }
+.category_nav {
+  width: 100%;
+}
 </style>
