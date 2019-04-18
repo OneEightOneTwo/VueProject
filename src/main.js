@@ -10,6 +10,10 @@ import "swiper/dist/css/swiper.css";
 // Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
 
+import Vant from "vant";
+import "vant/lib/index.css";
+Vue.use(Vant);
+
 new Vue({
   router,
   store,

@@ -1,51 +1,42 @@
 <template>
-  <swiper :options="swiperOption">
-    <swiper-slide
-      v-for="item in imgList"
-      :key="item"
-      style="width:auto"
-      >
-      <img ：src="item" alt="">
-      </swiper-slide
-    >
-  </swiper>
+  <van-swipe @change="onChange" :autoplay="3000">
+    <van-swipe-item v-for="(item, index) in imgs" :key="index"
+      ><img :src="item" alt=""
+    /></van-swipe-item>
+    <div class="custom-indicator" slot="indicator">
+      {{ current + 1 }}/{{ imgs.length }}
+    </div>
+  </van-swipe>
 </template>
 <script>
-
-import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
   name: "carrousel",
-  components: {
-    swiper,
-    swiperSlide
-  },
   data() {
     return {
-      swiperOption: {
-        pagination: {
-          el: ".swiper-pagination"
-        },
-        slidesPerView: "auto",
-        spaceBetween: 0,
-        freeMode: true
-      }
+      current: 0
     };
   },
-  props: ["imgList"],
-  methods: {}
+  computed: {
+    imgs() {
+      return this.imgList || [];
+    }
+  },
+  methods: {
+    onChange(i) {
+      this.current = i;
+    }
+  },
+  props: ["imgList"]
 };
 </script>
-<style lang="scss">
-.swiper-text {
-  line-height: 42px;
-  font-size: 14px;
-  margin: 0 15px;
-  display: inline-block;
-  border-bottom: 2px solid #fff;
-  box-sizing: border-box;
-}
-.swiper-text-active {
-  border-bottom-color: #ff4891;
-  color: #ff4891;
+<style scoped>
+.custom-indicator {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  padding: 2px 5px;
+  font-size: 12px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
 }
 </style>
