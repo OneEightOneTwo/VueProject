@@ -73,7 +73,7 @@
         <img
           :src="item.path"
           alt=""
-          v-for="(item, index) in product_list.banner"
+          v-for="item in product_list.banner"
           :key="item.path"
         />
       </div>
@@ -106,52 +106,63 @@ export default {
   data() {
     return {
       isShowDropBox: false,
-      activeCategory: ""
+      activeCategory: "",
     };
   },
   computed: {
     categoryList() {
-      return obstate.categoryList;
+      return obstate.categoryList || {};
     },
     product_list() {
-      return obstate.categorydata[this.activeCategory];
+      return obstate.categorydata[this.activeCategory] || {};
     }
   },
   methods: {
     //切换顶部分类，改变data中的product_list
     async switchCategory(id) {
-      this.isShowDropBox = false;
-      // let res = await api.get("http://localhos:8080/category", {
-      //   category_id: id,
-      //   page: 1,
-      //   num: 10
-      // });
+      if (id != this.activeCategory) {
+        if (!obstate.categorydata[id]) {
+          this.isShowDropBox = false;
+          let res = await api.get(
+            "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/category",
+            {
+              category_id: id,
+              page: 1,
+              num: 10
+            }
+          );
+        
+          if (res.status >= 300 && res.statue < 400) {
+            this.activeCategory = id;
+          } else if (res.status == 200) {
+            obstate.categorydata[id] = res.data.product_list;
+            this.activeCategory = id;
+          }
 
-      // if (res.status >= 300 && res.statue < 400) {
-      //   this.activeCategory = id;
-      // } else if (res.status == 200) {
-      //   obstate.categorydata[id] = res.product_list;
-      //   this.activeCategory = id;
-      // }
-
-      this.activeCategory = id;
+        } else {
+          this.activeCategory = id;
+        }
+      }
     }
   },
-  watch: {
-    
-  },
+  watch: {},
   async created() {
-    //初始化请求分类以及默认分类的商品数据
-    // let res = await api.get("http://localhost:8080/index/init", {
-    //   lat: "",
-    //   lng: ""
-    // });
-    // obstate.categoryList = res.category_list;
+    // 初始化请求分类以及默认分类的商品数据
+    let res = await api.get(
+      "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/index/init",
+      {
+        lat: "",
+        lng: ""
+      }
+    );
+    // console.log(res);
+    obstate.categoryList = res.data.category_list;
     // 请求接口，获取index页面数据
     for (let i = 0; i < obstate.categoryList.length; i++) {
       if (obstate.categoryList[i].default === 1) {
+        obstate.categorydata[obstate.categoryList[i].category_id] =
+          res.data.product_list;
         this.activeCategory = obstate.categoryList[i].category_id;
-        // obstate.categorydata[obstate.categoryList[i]] = res.product_list;
         break;
       }
     }
