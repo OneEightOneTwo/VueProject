@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import "./assets/js/svgiconfont.js";
 import "./assets/css/reset-phone.css";
+import "swiper/dist/css/swiper.css";
 // import mockdata from "../mock/mockjs.JS";
 // import axios from "axios";
 // Vue.prototype.$axios = axios;

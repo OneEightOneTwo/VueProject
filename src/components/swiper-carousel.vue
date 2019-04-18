@@ -1,19 +1,17 @@
 <template>
   <swiper :options="swiperOption">
     <swiper-slide
-      v-for="(slide, index) in swiperSlides"
-      :key="index"
+      v-for="item in imgList"
+      :key="item"
       style="width:auto"
-      ><span
-        class="swiper-text"
-        :class="{ 'swiper-text-active': slide.category_id == activeCategory }"
-        @click="switchCategory(slide.category_id)"
-        >{{ slide.name }}</span
-      ></swiper-slide
+      >
+      <img ：src="item" alt="">
+      </swiper-slide
     >
   </swiper>
 </template>
 <script>
+
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
   name: "carrousel",
@@ -33,12 +31,8 @@ export default {
       }
     };
   },
-  props: ["swiperSlides","activeCategory"],
-  methods:{
-      switchCategory(index){
-          this.$emit('switchCategory',index);
-      }
-  }
+  props: ["imgList"],
+  methods: {}
 };
 </script>
 <style lang="scss">

@@ -1,7 +1,7 @@
 <template>
   <div class="good-item-cell">
-    <div class="item-image">
-      <img :src="data.image" :alt="data.name" :key="data.image"/>
+    <div class="item-image" @click="routeTo(data.goodId)">
+      <img :src="data.image" :alt="data.name" :key="data.image" />
     </div>
     <div class="item-des">
       <p class="name" v-text="data.name"></p>
@@ -17,7 +17,12 @@
 </template>
 <script>
 export default {
-  props: ["data"]
+  props: ["data"],
+  methods: {
+    routeTo(goodId) {
+      this.$router.push({ path: "/product", query: { gid: goodId } });
+    }
+  }
 };
 </script>
 <style lang="scss">

@@ -8,6 +8,7 @@ import Mine from "./views/Home/Mine.vue";
 import Search from "./views/Search.vue";
 import Login from "./views/Login.vue";
 import Home from "./views/Home.vue";
+import Product from "./views/Product.vue";
 
 //TODO 访问路由时再切换footbar的状态
 Vue.use(Router);
@@ -62,6 +63,11 @@ let router = new Router({
       path: "/login",
       name: "login",
       component: Login
+    },
+    {
+      path: "/product",
+      name: "product",
+      component: Product
     }
   ]
 });

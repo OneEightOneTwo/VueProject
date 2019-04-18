@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <router-view />
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 <script>
 //头部组件
 export default {
   name: "app",
-  components: {
-   
-  }
+  components: {}
 };
 </script>
 
