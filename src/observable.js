@@ -48,7 +48,8 @@ const state = Vue.observable({
     ]
   },
   categoryList: [],
-  categorydata: {}
+  categorydata: {},
+  activeCategory: ""
 });
 
 export default state;
