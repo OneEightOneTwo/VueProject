@@ -2,35 +2,45 @@
   <div>
     <!-- 分类页 -->
     <div class="classify-header">
-      <SearchBar/>
+      <SearchBar />
     </div>
     <div class="classify-cons">
       <!-- // 引入element-ui 里面的分类选择Tabs -->
       <el-tabs :tab-position="tabPosition">
-        <el-tab-pane :label="item.name" v-for="(item,index) in categoryList" :key="index">
-         
+        <el-tab-pane
+          :label="item.name"
+          v-for="(item, index) in categoryList"
+          :key="index"
+        >
           <div class="classify-cons-right">
             <div class="cons-right-title">
-               <!-- vantUI框架 -->
-              <van-tabs v-model="active" :ellipsis="ellipsis" title-active-color="#ff4891"
-                color="#ff4891">
-                <van-tab v-for="(item,index) in categoryList" :key="index" :title="item.name">
-                    <div v-for="(item,index) in product_list">
-                        <!-- 内容 {{ index }} -->
-                      <ClassifyChart  :data="item"/>
-                    </div>
+              <!-- vantUI框架 -->
+              <van-tabs
+                v-model="active"
+                :ellipsis="ellipsis"
+                title-active-color="#ff4891"
+                color="#ff4891"
+              >
+                <van-tab
+                  v-for="(item, index) in categoryList"
+                  :key="index"
+                  :title="item.name"
+                >
+                  <div v-for="(item, index) in product_list" :key="index">
+                    <!-- 内容 {{ index }} -->
+                    <ClassifyChart :data="item" />
+                  </div>
                 </van-tab>
                 <!-- 点击右上角按钮显示的模块 -->
                 <!-- <ClassifySecondCons/> -->
-            </van-tabs>
+              </van-tabs>
             </div>
             <!-- 点击 显示或隐藏 classify-sec-cons-->
             <div class="classify-cons-btn">
-              <img src="../../assets/arrows_down.png" alt>
+              <img src="../../assets/arrows_down.png" alt />
             </div>
           </div>
         </el-tab-pane>
-        
       </el-tabs>
     </div>
   </div>
@@ -45,7 +55,7 @@ import obstate from "../../observable.js";
 export default {
   components: {
     SearchBar,
-    ClassifyChart,
+    ClassifyChart
   },
 
   data() {
@@ -57,11 +67,11 @@ export default {
       active: 0,
       ellipsis: false,
       //
-       activeCategory: "hotsale",
+      activeCategory: "hotsale"
     };
   },
-  computed:{
-      categoryList() {
+  computed: {
+    categoryList() {
       return obstate.categoryList || {};
     },
     product_list() {
@@ -86,26 +96,26 @@ export default {
   .el-tabs__item.is-active {
     color: #ff4891;
   }
-  .el-tabs__item{
-    font-size:16px;
-    text-align:center;
+  .el-tabs__item {
+    font-size: 16px;
+    text-align: center;
   }
   .el-tabs__active-bar {
     background-color: #ff4891;
   }
-  .classify-cons-right{
-    width:100%;
-    position:relative;
-    .cons-right-title{
-      width:90%;
+  .classify-cons-right {
+    width: 100%;
+    position: relative;
+    .cons-right-title {
+      width: 90%;
       font-size: 14px;
       // display:none;
-     // 修改vant样式
+      // 修改vant样式
       .van-tab {
-      line-height: 36px;
-      font-size: 14px;
+        line-height: 36px;
+        font-size: 14px;
       }
-      .van-ellipsis{
+      .van-ellipsis {
         text-overflow: none;
       }
     }
@@ -119,7 +129,6 @@ export default {
         height: 18px;
       }
     }
-
   }
 }
 </style>
