@@ -20,6 +20,8 @@
                       <ClassifyChart  :data="item"/>
                     </div>
                 </van-tab>
+                <!-- 点击右上角按钮显示的模块 -->
+                <!-- <ClassifySecondCons/> -->
             </van-tabs>
             </div>
             <!-- 点击 显示或隐藏 classify-sec-cons-->
@@ -36,14 +38,14 @@
 <script>
 import SearchBar from "../../components/SearchBar";
 import ClassifyChart from "../../components/ClassifyChart";
-// import ClassifyBar from "../../components/ClassifyBar";
+// import ClassifySecondCons from "../../components/ClassifySecondCons";
 
 // observable引入 首页数据 复用
 import obstate from "../../observable.js";
 export default {
   components: {
     SearchBar,
-    ClassifyChart
+    ClassifyChart,
   },
 
   data() {

@@ -24,35 +24,35 @@ let router = new Router({
     {
       path: "/home",
       name: "home",
-      redirect: "/home/index",
+      // redirect: "/home/index",
       component: Home,
-      children: [
-        {
-          path: "index",
-          name: "index",
-          component: Index
-        },
-        {
-          path: "classify",
-          name: "classify",
-          component: Classify
-        },
-        {
-          path: "discove",
-          name: "discove",
-          component: Discove
-        },
-        {
-          path: "shopcar",
-          name: "shopcar",
-          component: ShopCar
-        },
-        {
-          path: "mine",
-          name: "mine",
-          component: Mine
-        }
-      ]
+      // children: [
+      //   {
+      //     path: "index",
+      //     name: "index",
+      //     component: Index
+      //   },
+      //   {
+      //     path: "classify",
+      //     name: "classify",
+      //     component: Classify
+      //   },
+      //   {
+      //     path: "discove",
+      //     name: "discove",
+      //     component: Discove
+      //   },
+      //   {
+      //     path: "shopcar",
+      //     name: "shopcar",
+      //     component: ShopCar
+      //   },
+      //   {
+      //     path: "mine",
+      //     name: "mine",
+      //     component: Mine
+      //   }
+      // ]
     },
     {
       path: "/search",

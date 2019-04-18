@@ -44,7 +44,7 @@ export default {
   methods: {
     routerTo(str) {
       obstate.footerBar.activeItem = str;
-      this.$router.push({ name: str });
+      // this.$router.push({ name: str });
     }
   },
   components: {

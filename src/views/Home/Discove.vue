@@ -27,8 +27,10 @@
         <div class="article__controls">
           <div class="control-item article__reading">浏览 18333</div>
           <div class="control-btn-area">
-            <div class="control-item article__collection" style="display: none;">
-            </div>
+            <div
+              class="control-item article__collection"
+              style="display: none;"
+            ></div>
             <div class="control-item article__btn-share">
               <i class="fenxiang"></i>分享
             </div>
@@ -36,66 +38,66 @@
         </div>
         <div class="big-wrap">
           <div class="imgload fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
         <div class="big-wrap">
           <div class="imgload fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
         <div class="big-wrap">
           <div class="imgload fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
         <div class="big-wrap">
           <div class="imgload fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
       </van-tab>
@@ -122,8 +124,10 @@
         <div class="article__controls">
           <div class="control-item article__reading">浏览 18333</div>
           <div class="control-btn-area">
-            <div class="control-item article__collection" style="display: none;">
-            </div>
+            <div
+              class="control-item article__collection"
+              style="display: none;"
+            ></div>
             <div class="control-item article__btn-share">
               <i class="fenxiang"></i>分享
             </div>
@@ -131,66 +135,66 @@
         </div>
         <div class="big-wrap">
           <div class="imgload2 fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
         <div class="big-wrap">
           <div class="imgload2 fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
         <div class="big-wrap">
           <div class="imgload2 fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
         <div class="big-wrap">
           <div class="imgload2 fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
       </van-tab>
@@ -217,8 +221,10 @@
         <div class="article__controls">
           <div class="control-item article__reading">浏览 18333</div>
           <div class="control-btn-area">
-            <div class="control-item article__collection" style="display: none;">
-            </div>
+            <div
+              class="control-item article__collection"
+              style="display: none;"
+            ></div>
             <div class="control-item article__btn-share">
               <i class="fenxiang"></i>分享
             </div>
@@ -226,66 +232,66 @@
         </div>
         <div class="big-wrap">
           <div class="imgload3 fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
         <div class="big-wrap">
           <div class="imgload3 fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
         <div class="big-wrap">
           <div class="imgload3 fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
         <div class="big-wrap">
           <div class="imgload3 fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
       </van-tab>
@@ -312,8 +318,10 @@
         <div class="article__controls">
           <div class="control-item article__reading">浏览 18333</div>
           <div class="control-btn-area">
-            <div class="control-item article__collection" style="display: none;">
-            </div>
+            <div
+              class="control-item article__collection"
+              style="display: none;"
+            ></div>
             <div class="control-item article__btn-share">
               <i class="fenxiang"></i>分享
             </div>
@@ -321,66 +329,66 @@
         </div>
         <div class="big-wrap">
           <div class="imgload4 fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
         <div class="big-wrap">
           <div class="imgload4 fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
         <div class="big-wrap">
           <div class="imgload4 fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
         <div class="big-wrap">
           <div class="imgload4 fl">
-            <img src="../../assets/player.png">
+            <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
-             <div class="follow-user">
-               <img src="../../assets/canvideo.jpg">
-               <span>罐头视频</span>
-             </div>
-             <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-             <div class="follownum">
-               <span class="fl">浏览  14199</span>
-               <i class="fr"></i>
-             </div>
+            <div class="follow-user">
+              <img src="../../assets/canvideo.jpg" />
+              <span>罐头视频</span>
+            </div>
+            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <div class="follownum">
+              <span class="fl">浏览 14199</span>
+              <i class="fr"></i>
+            </div>
           </div>
         </div>
       </van-tab>
@@ -391,7 +399,8 @@
 export default {
   data() {
     return {
-      active: 0
+      active: 0,
+      data: {}
     };
   }
 };
@@ -450,140 +459,137 @@ export default {
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
     }
-    .article__controls{
-    display: flex;
-    height: 18px;
-    margin-top: 13px;
-    justify-content: space-between;
-    align-items: center;
-    .control-item{
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: #969696;
-    .fenxiang{
-      display: block;
-      width: 24px;
-      height: 24px;
-      background:url(../../assets/fenxiang.png)no-repeat center center;
+    .article__controls {
+      display: flex;
+      height: 18px;
+      margin-top: 13px;
+      justify-content: space-between;
+      align-items: center;
+      .control-item {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: #969696;
+        .fenxiang {
+          display: block;
+          width: 24px;
+          height: 24px;
+          background: url(../../assets/fenxiang.png) no-repeat center center;
+        }
+      }
     }
-   }
-  }
-   .big-wrap{
+    .big-wrap {
       width: 345px;
       height: 125px;
       margin-top: 10px;
       margin-bottom: 10px;
-      .imgload{
-       width: 150px;
-       height: 103px;
-       background: url(../../assets/doufu.webp)no-repeat center center;
-       background-size: cover;
-       border-radius: 10px;
-       position: relative;
-       img{
-         width: 44px;
-         height: 44px;
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform:translate(-50%,-50%);
-       }
+      .imgload {
+        width: 150px;
+        height: 103px;
+        background: url(../../assets/doufu.webp) no-repeat center center;
+        background-size: cover;
+        border-radius: 10px;
+        position: relative;
+        img {
+          width: 44px;
+          height: 44px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
-      .imgload2{
-         width: 150px;
-       height: 103px;
-       background: url(../../assets/cheese.webp)no-repeat center center;
-       background-size: cover;
-       border-radius: 10px;
-       position: relative;
-       img{
-         width: 44px;
-         height: 44px;
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform:translate(-50%,-50%);
-       }
+      .imgload2 {
+        width: 150px;
+        height: 103px;
+        background: url(../../assets/cheese.webp) no-repeat center center;
+        background-size: cover;
+        border-radius: 10px;
+        position: relative;
+        img {
+          width: 44px;
+          height: 44px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
-      .imgload3{
-         width: 150px;
-       height: 103px;
-       background: url(../../assets/eggscroll.webp)no-repeat center center;
-       background-size: cover;
-       border-radius: 10px;
-       position: relative;
-       img{
-         width: 44px;
-         height: 44px;
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform:translate(-50%,-50%);
-       }
+      .imgload3 {
+        width: 150px;
+        height: 103px;
+        background: url(../../assets/eggscroll.webp) no-repeat center center;
+        background-size: cover;
+        border-radius: 10px;
+        position: relative;
+        img {
+          width: 44px;
+          height: 44px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
-      .imgload4{
-       width: 150px;
-       height: 103px;
-       background: url(../../assets/icecream.webp)no-repeat center center;
-       background-size: cover;
-       border-radius: 10px;
-       position: relative;
-       img{
-         width: 44px;
-         height: 44px;
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform:translate(-50%,-50%);
-       }
+      .imgload4 {
+        width: 150px;
+        height: 103px;
+        background: url(../../assets/icecream.webp) no-repeat center center;
+        background-size: cover;
+        border-radius: 10px;
+        position: relative;
+        img {
+          width: 44px;
+          height: 44px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
-      .imgdetail{
+      .imgdetail {
         width: 195px;
         height: 101px;
         padding-left: 10px;
-        .follow-user{
+        .follow-user {
           width: 180px;
           height: 18px;
           display: flex;
           justify-content: flex-start;
           align-items: center;
           overflow: hidden;
-           img{
-             width: 18px;
-             height: 18px;
-           }
-           span{
-             font-size: 12px;
-             line-height: 18px;
-           }
+          img {
+            width: 18px;
+            height: 18px;
+          }
+          span {
+            font-size: 12px;
+            line-height: 18px;
+          }
         }
-        .article{
-            margin: 10px 0 8px;
-            font-size: 16px;
-            color: #474346;
-            line-height: 20px;
+        .article {
+          margin: 10px 0 8px;
+          font-size: 16px;
+          color: #474346;
+          line-height: 20px;
         }
-        .follownum{
+        .follownum {
           width: 180px;
           height: 20px;
           margin-top: 10px;
-          span{
-          font-size: 12px;
-          color: #969696;
+          span {
+            font-size: 12px;
+            color: #969696;
           }
-          i{
+          i {
             display: block;
             width: 20px;
             height: 20px;
-            background:url(../../assets/fenxiang.png)no-repeat center center;
+            background: url(../../assets/fenxiang.png) no-repeat center center;
           }
         }
       }
-
-  }
-
-
+    }
   }
 }
 </style>
