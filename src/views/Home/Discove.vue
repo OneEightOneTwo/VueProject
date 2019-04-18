@@ -130,7 +130,7 @@
           </div>
         </div>
         <div class="big-wrap">
-          <div class="imgload fl">
+          <div class="imgload2 fl">
             <img src="../../assets/player.png">
           </div>
           <div class="imgdetail fr">
@@ -146,7 +146,7 @@
           </div>
         </div>
         <div class="big-wrap">
-          <div class="imgload fl">
+          <div class="imgload2 fl">
             <img src="../../assets/player.png">
           </div>
           <div class="imgdetail fr">
@@ -162,7 +162,7 @@
           </div>
         </div>
         <div class="big-wrap">
-          <div class="imgload fl">
+          <div class="imgload2 fl">
             <img src="../../assets/player.png">
           </div>
           <div class="imgdetail fr">
@@ -178,7 +178,7 @@
           </div>
         </div>
         <div class="big-wrap">
-          <div class="imgload fl">
+          <div class="imgload2 fl">
             <img src="../../assets/player.png">
           </div>
           <div class="imgdetail fr">
@@ -225,7 +225,7 @@
           </div>
         </div>
         <div class="big-wrap">
-          <div class="imgload fl">
+          <div class="imgload3 fl">
             <img src="../../assets/player.png">
           </div>
           <div class="imgdetail fr">
@@ -241,7 +241,7 @@
           </div>
         </div>
         <div class="big-wrap">
-          <div class="imgload fl">
+          <div class="imgload3 fl">
             <img src="../../assets/player.png">
           </div>
           <div class="imgdetail fr">
@@ -257,7 +257,7 @@
           </div>
         </div>
         <div class="big-wrap">
-          <div class="imgload fl">
+          <div class="imgload3 fl">
             <img src="../../assets/player.png">
           </div>
           <div class="imgdetail fr">
@@ -273,7 +273,7 @@
           </div>
         </div>
         <div class="big-wrap">
-          <div class="imgload fl">
+          <div class="imgload3 fl">
             <img src="../../assets/player.png">
           </div>
           <div class="imgdetail fr">
@@ -320,7 +320,7 @@
           </div>
         </div>
         <div class="big-wrap">
-          <div class="imgload fl">
+          <div class="imgload4 fl">
             <img src="../../assets/player.png">
           </div>
           <div class="imgdetail fr">
@@ -336,7 +336,7 @@
           </div>
         </div>
         <div class="big-wrap">
-          <div class="imgload fl">
+          <div class="imgload4 fl">
             <img src="../../assets/player.png">
           </div>
           <div class="imgdetail fr">
@@ -352,7 +352,7 @@
           </div>
         </div>
         <div class="big-wrap">
-          <div class="imgload fl">
+          <div class="imgload4 fl">
             <img src="../../assets/player.png">
           </div>
           <div class="imgdetail fr">
@@ -368,7 +368,7 @@
           </div>
         </div>
         <div class="big-wrap">
-          <div class="imgload fl">
+          <div class="imgload4 fl">
             <img src="../../assets/player.png">
           </div>
           <div class="imgdetail fr">
@@ -478,6 +478,54 @@ export default {
        width: 150px;
        height: 103px;
        background: url(../../assets/doufu.webp)no-repeat center center;
+       background-size: cover;
+       border-radius: 10px;
+       position: relative;
+       img{
+         width: 44px;
+         height: 44px;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform:translate(-50%,-50%);
+       }
+      }
+      .imgload2{
+         width: 150px;
+       height: 103px;
+       background: url(../../assets/cheese.webp)no-repeat center center;
+       background-size: cover;
+       border-radius: 10px;
+       position: relative;
+       img{
+         width: 44px;
+         height: 44px;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform:translate(-50%,-50%);
+       }
+      }
+      .imgload3{
+         width: 150px;
+       height: 103px;
+       background: url(../../assets/eggscroll.webp)no-repeat center center;
+       background-size: cover;
+       border-radius: 10px;
+       position: relative;
+       img{
+         width: 44px;
+         height: 44px;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform:translate(-50%,-50%);
+       }
+      }
+      .imgload4{
+       width: 150px;
+       height: 103px;
+       background: url(../../assets/icecream.webp)no-repeat center center;
        background-size: cover;
        border-radius: 10px;
        position: relative;
