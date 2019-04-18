@@ -23,7 +23,13 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data(){
+    return{
+      active:0
+    };
+  }
+};
 </script>
 <style lang="scss" scoped>
 .bear {
