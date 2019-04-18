@@ -1,0 +1,125 @@
+{
+    "status": 1,
+    "category_list": [
+        {
+            "default": 1,
+            "category_id": "hotsale",
+            "name": "热卖",
+            "icon": "https://j-image.missfresh.cn/mis_img_20181212225039946.png?mryxw=120&mryxh=120",
+            "classifying": "special"
+        },
+        {
+            "default": 0,
+            "category_id": "fruit",
+            "name": "新鲜水果",
+            "icon": "https://j-image.missfresh.cn/mis_img_20190415010710117.png?mryxw=96&mryxh=96",
+            "classifying": "base"
+        },
+        {
+            "default": 0,
+            "category_id": "garden",
+            "name": "时令蔬菜",
+            "icon": "https://j-image.missfresh.cn/mis_img_20190411215607573.png?mryxw=96&mryxh=96",
+            "classifying": "base"
+        },
+        {
+            "default": 0,
+            "category_id": "meategg",
+            "name": "精品肉蛋",
+            "icon": "https://j-image.missfresh.cn/mis_img_20190411233944397.png?mryxw=96&mryxh=96",
+            "classifying": "base"
+        },
+        {
+            "default": 0,
+            "category_id": "seafood",
+            "name": "海鲜水产",
+            "icon": "https://j-image.missfresh.cn/mis_img_20190411215703249.png?mryxw=96&mryxh=96",
+            "classifying": "base"
+        },
+        {
+            "default": 0,
+            "category_id": "milk",
+            "name": "大牌乳品",
+            "icon": "https://j-image.missfresh.cn/mis_img_20190411215729751.png?mryxw=96&mryxh=96",
+            "classifying": "base"
+        },
+        {
+            "default": 0,
+            "category_id": "snack",
+            "name": "网红零食",
+            "icon": "https://j-image.missfresh.cn/mis_img_20181212225358505.png?mryxw=140&mryxh=140",
+            "classifying": "base"
+        }
+    ],
+    "img_url": "https://j-image.missfresh.cn/img_20161108170831264.png",
+    "product_list": {
+        "categoryArea": {
+            "lanternArea": [
+                {
+                    "image": "https://j-image.missfresh.cn/img_20181127211810194.png",
+                    "name": "本周新品"
+                },
+                {
+                    "image": "https://j-image.missfresh.cn/img_20181127212305318.png",
+                    "name": "邀请有礼"
+                },
+                {
+                    "image": "https://j-image.missfresh.cn/img_20181127212018922.png",
+                    "name": "每日签到"
+                },
+                {
+                    "image": "https://j-image.missfresh.cn/img_20181127212340988.png",
+                    "name": "凑单专区"
+                },
+                {
+                    "image": "https://j-image.missfresh.cn/img_20181127212459157.png",
+                    "name": "开通会员"
+                }
+            ],
+            "tileArea": [
+                {
+                    "image": "https://j-image.missfresh.cn/img_20190115153812265.png"
+                },
+                {
+                    "image": "https://j-image.missfresh.cn/img_20190115153756830.png"
+                }
+            ]
+        },
+        "brands": [
+            {
+                "image": "https://j-image.missfresh.cn/img_20170627185311186.png",
+                "name": "优鲜严选",
+                "link": "https://as-vip.missfresh.cn/v1/h5model/strict-selection"
+            },
+            {
+                "image": "https://j-image.missfresh.cn/img_20170627184654084.png",
+                "name": "安心检测",
+                "link": "https://as-vip.missfresh.cn/v1/h5model/safeguard"
+            },
+            {
+                "image": "https://j-image.missfresh.cn/img_20170718194948016.png",
+                "name": "赔付保障",
+                "link": "https://p-h5.missfresh.cn/h5_file/467AA9256CCD5AB8F364815C073C00FD/index.html"
+            }
+        ],
+        "banner": [
+            {
+                "path": "https://j-image.missfresh.cn/mis_img_20190226141252067.jpg?mryxw=750&mryxh=142"
+            }
+        ],
+        "products": [
+            {
+                "goodId": 1,
+                "image": "https://image.missfresh.cn/18ef85f85c8343a79444a4b34da400e9.jpg",
+                "promotionTags": "限时秒杀",
+                "newPrice": 3.9,
+                "oldPrice": 12.9,
+                "sell_out": false,
+                "subtitle": "大颗香甜 微微一笑为红颜",
+                "name": "红颜草莓1斤"
+            }
+        ],
+        "page": 1,
+        "num": 10
+    }
+}
