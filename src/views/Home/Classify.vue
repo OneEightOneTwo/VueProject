@@ -2,47 +2,81 @@
   <div>
     <!-- 分类页 -->
     <div class="classify-header">
-      <SearchBar/>
+      <SearchBar />
     </div>
     <div class="classify-cons">
-      <div class="classify-cons-left">
-        <ul>
-          <li>会员精选</li>
-          <li>水果</li>
-          <li>精品肉蛋</li>
-          <li>海鲜水产</li>
-          <li>大牌乳品</li>
-          <li>网红零食</li>
-          <li>酒水饮品</li>
-          <li>烘培蛋糕</li>
-          <li>方便速食</li>
-          <li>风味熟食</li>
-          <li>粮油调味</li>
-          <li>美妆美颜</li>
-        </ul>
-      </div>
-      <div class="classify-cons-right">
-        <div class="classify-cons-rightBar">
-          <ClassifyBar/>
-          <div class="classify-cons-btn">
-            <img src="../../assets/arrows_down.png" alt>
+      <!-- // 引入element-ui 里面的分类选择Tabs -->
+      <el-tabs :tab-position="tabPosition">
+        <el-tab-pane
+          :label="item.name"
+          v-for="(item, index) in categoryList"
+          :key="index"
+        >
+          <div class="classify-cons-right">
+            <div class="cons-right-title">
+              <!-- vantUI框架 -->
+              <van-tabs
+                v-model="active"
+                :ellipsis="ellipsis"
+                title-active-color="#ff4891"
+                color="#ff4891"
+              >
+                <van-tab
+                  v-for="(item, index) in categoryList"
+                  :key="index"
+                  :title="item.name"
+                >
+                  <div v-for="(item, index) in product_list" :key="index">
+                    <!-- 内容 {{ index }} -->
+                    <ClassifyChart :data="item" />
+                  </div>
+                </van-tab>
+                <!-- 点击右上角按钮显示的模块 -->
+                <!-- <ClassifySecondCons/> -->
+              </van-tabs>
+            </div>
+            <!-- 点击 显示或隐藏 classify-sec-cons-->
+            <div class="classify-cons-btn">
+              <img src="../../assets/arrows_down.png" alt />
+            </div>
           </div>
-        </div>
-        <ClassifyChart/>
-        <ClassifyChart/>
-      </div>
+        </el-tab-pane>
+      </el-tabs>
     </div>
   </div>
 </template>
 <script>
 import SearchBar from "../../components/SearchBar";
 import ClassifyChart from "../../components/ClassifyChart";
-import ClassifyBar from "../../components/ClassifyBar";
+// import ClassifySecondCons from "../../components/ClassifySecondCons";
+
+// observable引入 首页数据 复用
+import obstate from "../../observable.js";
 export default {
   components: {
     SearchBar,
-    ClassifyChart,
-    ClassifyBar
+    ClassifyChart
+  },
+
+  data() {
+    return {
+      // 引入element-ui 里面的分类选择Tabs
+      tabPosition: "left",
+      stretch: true,
+      // 引入vant 里面的分类选择TreeSelect
+      active: 0,
+      ellipsis: false,
+      //
+      activeCategory: "hotsale"
+    };
+  },
+  computed: {
+    categoryList() {
+      return obstate.categoryList || {};
+    },
+    product_list() {
+      return obstate.categorydata[this.activeCategory] || {};
+    }
   }
 };
 </script>
@@ -53,36 +87,46 @@ export default {
 .classify-cons {
   width: 100%;
   height: 100%;
-  display: flex;
-  .classify-cons-left {
-    width: 25%;
+  // position: relative;
+  // 修改element-ui样式
+  .el-tabs__item:hover {
+    color: #ff4891;
+    cursor: pointer;
+  }
+  .el-tabs__item.is-active {
+    color: #ff4891;
+  }
+  .el-tabs__item {
+    font-size: 16px;
     text-align: center;
-    background: rgb(206, 204, 204);
-    ul li {
-      height: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  }
+  .el-tabs__active-bar {
+    background-color: #ff4891;
   }
   .classify-cons-right {
-    width: 75%;
-    height: 36px;
-    .classify-cons-rightBar {
+    width: 100%;
+    position: relative;
+    .cons-right-title {
       width: 90%;
-      height: 36px;
-      padding-left: 10px;
-      box-sizing: border-box;
-      position: relative;
-      .classify-cons-btn {
-        position: absolute;
-        top: 3px;
-        right: -22px;
-        img {
-          display: inline-block;
-          width: 18px;
-          height: 18px;
-        }
+      font-size: 14px;
+      // display:none;
+      // 修改vant样式
+      .van-tab {
+        line-height: 36px;
+        font-size: 14px;
+      }
+      .van-ellipsis {
+        text-overflow: none;
+      }
+    }
+    .classify-cons-btn {
+      position: absolute;
+      top: 11px;
+      right: 3px;
+      img {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
       }
     }
   }

@@ -4,12 +4,12 @@
     <div class="classify-chart">
       <div class="classify-chart-img">
         <div class="chart-img">
-          <img src="../assets/recommendgoods.jpg" alt>
+          <img :src="data.image" alt>
           <div class="chart-text">满39减5</div>
         </div>
       </div>
       <div class="classify-chart-right">
-        <div class="classify-chart-title">澳洲黄尾红葡萄酒750ml</div>
+        <div class="classify-chart-title">澳洲黄尾红葡萄酒</div>
         <div class="classify-chart-text">跟袋鼠一样 是澳洲的代名词</div>
         <div class="classify-chart-others">
           <div class="classify-chart-price">
@@ -25,7 +25,9 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  props: ["data"]
+};
 </script>
 <style lang="scss">
 .classify-chart {
