@@ -49,7 +49,15 @@ const state = Vue.observable({
   },
   categoryList: [],
   categorydata: {},
-  activeCategory: ""
+  activeCategory: "",
+  currentRegion: {
+    city: "广州市",
+    address: "",
+    building: "每日优鲜",
+    lat: "", //纬度
+    lng: "", //经度
+    adcode: ""
+  }
 });
 
 export default state;

@@ -1,8 +1,8 @@
 <template>
   <div class="search-header">
-    <div class="left">
+    <div class="left" @click="routerTo">
       <img src="../assets/logo.png" />
-      <div class="locationNav">元岗村小学</div>
+      <div class="locationNav" v-text="address">元岗村小学</div>
       <span class="buildingName"></span>
     </div>
     <div class="right">
@@ -16,7 +16,19 @@
   </div>
 </template>
 <script>
-export default {};
+import obstate from "../observable.js"
+export default {
+  methods:{
+    routerTo(){
+      this.$router.push('location')
+    }
+  },
+  computed:{
+    address(){
+      return obstate.currentRegion.address
+    }
+  }
+};
 </script>
 <style lang="scss">
 .search-header {

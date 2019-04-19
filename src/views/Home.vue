@@ -38,6 +38,7 @@ export default {
     Mine
   },
   async created() {
+    //发送定位信息
     let res = await api.get(
       "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/index/init",
       {
@@ -45,7 +46,7 @@ export default {
         lng: ""
       }
     );
-    // console.log(res);
+    console.log(res);
     obstate.categoryList = res.data.category_list;
     // 请求接口，获取index页面数据
     for (let i = 0; i < obstate.categoryList.length; i++) {
