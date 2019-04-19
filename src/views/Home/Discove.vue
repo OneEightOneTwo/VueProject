@@ -36,66 +36,21 @@
             </div>
           </div>
         </div>
-        <div class="big-wrap">
-          <div class="imgload fl">
+        <div class="big-wrap" v-for="(item, index) in goods" :key="index">
+          <div
+            class="imgload fl"
+           :style="{'background':'url('+ item.titlePic +')','background-size':'cover'}"
+          >
             <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
             <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
+              <img :src="item.authorPhoto" />
+              <span v-text="item.nickname"></span>
             </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <p class="article" v-text="item.title"></p>
             <div class="follownum">
-              <span class="fl">浏览 14199</span>
-              <i class="fr"></i>
-            </div>
-          </div>
-        </div>
-        <div class="big-wrap">
-          <div class="imgload fl">
-            <img src="../../assets/player.png" />
-          </div>
-          <div class="imgdetail fr">
-            <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
-            </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-            <div class="follownum">
-              <span class="fl">浏览 14199</span>
-              <i class="fr"></i>
-            </div>
-          </div>
-        </div>
-        <div class="big-wrap">
-          <div class="imgload fl">
-            <img src="../../assets/player.png" />
-          </div>
-          <div class="imgdetail fr">
-            <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
-            </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-            <div class="follownum">
-              <span class="fl">浏览 14199</span>
-              <i class="fr"></i>
-            </div>
-          </div>
-        </div>
-        <div class="big-wrap">
-          <div class="imgload fl">
-            <img src="../../assets/player.png" />
-          </div>
-          <div class="imgdetail fr">
-            <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
-            </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-            <div class="follownum">
-              <span class="fl">浏览 14199</span>
+              <span class="fl">浏览{{ item.fontReadNo }}</span>
               <i class="fr"></i>
             </div>
           </div>
@@ -133,66 +88,21 @@
             </div>
           </div>
         </div>
-        <div class="big-wrap">
-          <div class="imgload2 fl">
+         <div class="big-wrap" v-for="(item, index) in goods" :key="index">
+          <div
+            class="imgload fl"
+           :style="{'background':'url('+ item.titlePic +')','background-size':'cover'}"
+          >
             <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
             <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
+              <img :src="item.authorPhoto" />
+              <span v-text="item.nickname"></span>
             </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <p class="article" v-text="item.title"></p>
             <div class="follownum">
-              <span class="fl">浏览 14199</span>
-              <i class="fr"></i>
-            </div>
-          </div>
-        </div>
-        <div class="big-wrap">
-          <div class="imgload2 fl">
-            <img src="../../assets/player.png" />
-          </div>
-          <div class="imgdetail fr">
-            <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
-            </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-            <div class="follownum">
-              <span class="fl">浏览 14199</span>
-              <i class="fr"></i>
-            </div>
-          </div>
-        </div>
-        <div class="big-wrap">
-          <div class="imgload2 fl">
-            <img src="../../assets/player.png" />
-          </div>
-          <div class="imgdetail fr">
-            <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
-            </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-            <div class="follownum">
-              <span class="fl">浏览 14199</span>
-              <i class="fr"></i>
-            </div>
-          </div>
-        </div>
-        <div class="big-wrap">
-          <div class="imgload2 fl">
-            <img src="../../assets/player.png" />
-          </div>
-          <div class="imgdetail fr">
-            <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
-            </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-            <div class="follownum">
-              <span class="fl">浏览 14199</span>
+              <span class="fl">浏览{{ item.fontReadNo }}</span>
               <i class="fr"></i>
             </div>
           </div>
@@ -230,66 +140,21 @@
             </div>
           </div>
         </div>
-        <div class="big-wrap">
-          <div class="imgload3 fl">
+         <div class="big-wrap" v-for="(item, index) in goods" :key="index">
+          <div
+            class="imgload fl"
+           :style="{'background':'url('+ item.titlePic +')','background-size':'cover'}"
+          >
             <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
             <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
+              <img :src="item.authorPhoto" />
+              <span v-text="item.nickname"></span>
             </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <p class="article" v-text="item.title"></p>
             <div class="follownum">
-              <span class="fl">浏览 14199</span>
-              <i class="fr"></i>
-            </div>
-          </div>
-        </div>
-        <div class="big-wrap">
-          <div class="imgload3 fl">
-            <img src="../../assets/player.png" />
-          </div>
-          <div class="imgdetail fr">
-            <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
-            </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-            <div class="follownum">
-              <span class="fl">浏览 14199</span>
-              <i class="fr"></i>
-            </div>
-          </div>
-        </div>
-        <div class="big-wrap">
-          <div class="imgload3 fl">
-            <img src="../../assets/player.png" />
-          </div>
-          <div class="imgdetail fr">
-            <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
-            </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-            <div class="follownum">
-              <span class="fl">浏览 14199</span>
-              <i class="fr"></i>
-            </div>
-          </div>
-        </div>
-        <div class="big-wrap">
-          <div class="imgload3 fl">
-            <img src="../../assets/player.png" />
-          </div>
-          <div class="imgdetail fr">
-            <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
-            </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-            <div class="follownum">
-              <span class="fl">浏览 14199</span>
+              <span class="fl">浏览{{ item.fontReadNo }}</span>
               <i class="fr"></i>
             </div>
           </div>
@@ -327,66 +192,21 @@
             </div>
           </div>
         </div>
-        <div class="big-wrap">
-          <div class="imgload4 fl">
+         <div class="big-wrap" v-for="(item, index) in goods" :key="index">
+          <div
+            class="imgload fl"
+           :style="{'background':'url('+ item.titlePic +')','background-size':'cover'}"
+          >
             <img src="../../assets/player.png" />
           </div>
           <div class="imgdetail fr">
             <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
+              <img :src="item.authorPhoto" />
+              <span v-text="item.nickname"></span>
             </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
+            <p class="article" v-text="item.title"></p>
             <div class="follownum">
-              <span class="fl">浏览 14199</span>
-              <i class="fr"></i>
-            </div>
-          </div>
-        </div>
-        <div class="big-wrap">
-          <div class="imgload4 fl">
-            <img src="../../assets/player.png" />
-          </div>
-          <div class="imgdetail fr">
-            <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
-            </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-            <div class="follownum">
-              <span class="fl">浏览 14199</span>
-              <i class="fr"></i>
-            </div>
-          </div>
-        </div>
-        <div class="big-wrap">
-          <div class="imgload4 fl">
-            <img src="../../assets/player.png" />
-          </div>
-          <div class="imgdetail fr">
-            <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
-            </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-            <div class="follownum">
-              <span class="fl">浏览 14199</span>
-              <i class="fr"></i>
-            </div>
-          </div>
-        </div>
-        <div class="big-wrap">
-          <div class="imgload4 fl">
-            <img src="../../assets/player.png" />
-          </div>
-          <div class="imgdetail fr">
-            <div class="follow-user">
-              <img src="../../assets/canvideo.jpg" />
-              <span>罐头视频</span>
-            </div>
-            <p class="article">【豆腐脑】5分钟自制，就是这么神奇</p>
-            <div class="follownum">
-              <span class="fl">浏览 14199</span>
+              <span class="fl">浏览{{ item.fontReadNo }}</span>
               <i class="fr"></i>
             </div>
           </div>
@@ -396,12 +216,20 @@
   </div>
 </template>
 <script>
+import api from "../../axios/api.js";
 export default {
   data() {
     return {
       active: 0,
-      data: {}
+      goods: []
     };
+  },
+  async created() {
+    let res = await api.get(
+      "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/discove"
+    );
+    this.goods = res.data.data[0].articles;
+    console.log(this.goods);
   }
 };
 </script>
@@ -409,7 +237,11 @@ export default {
 .dahezi {
   overflow: hidden;
   margin: 0 15px;
-  .bear {
+  .van-tabs__nav--line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    .bear {
     width: 24px;
     height: 24px;
     margin: 15px 10px;
@@ -417,6 +249,9 @@ export default {
       border-radius: 100%;
     }
   }
+
+  }
+  
   .page {
     width: 100%;
     margin-bottom: 50px;
@@ -486,7 +321,6 @@ export default {
       .imgload {
         width: 150px;
         height: 103px;
-        background: url(../../assets/doufu.webp) no-repeat center center;
         background-size: cover;
         border-radius: 10px;
         position: relative;
@@ -499,53 +333,10 @@ export default {
           transform: translate(-50%, -50%);
         }
       }
-      .imgload2 {
-        width: 150px;
-        height: 103px;
-        background: url(../../assets/cheese.webp) no-repeat center center;
-        background-size: cover;
-        border-radius: 10px;
-        position: relative;
-        img {
-          width: 44px;
-          height: 44px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
+      
+     
       }
-      .imgload3 {
-        width: 150px;
-        height: 103px;
-        background: url(../../assets/eggscroll.webp) no-repeat center center;
-        background-size: cover;
-        border-radius: 10px;
-        position: relative;
-        img {
-          width: 44px;
-          height: 44px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-      }
-      .imgload4 {
-        width: 150px;
-        height: 103px;
-        background: url(../../assets/icecream.webp) no-repeat center center;
-        background-size: cover;
-        border-radius: 10px;
-        position: relative;
-        img {
-          width: 44px;
-          height: 44px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
+      
       }
       .imgdetail {
         width: 195px;
@@ -590,6 +381,6 @@ export default {
         }
       }
     }
-  }
-}
+  
+
 </style>

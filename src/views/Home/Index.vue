@@ -1,6 +1,6 @@
 <template>
   <div class="indexbox">
-    <SearchBar />
+    <SearchBar/>
     <div class="category_nav">
       <div class="category_slidebar">
         <SwiperSlide
@@ -22,7 +22,7 @@
             :key="index"
             @click="switchCategory(item.category_id)"
           >
-            <img :src="item.icon" alt="" />
+            <img :src="item.icon" alt>
             <span v-text="item.name"></span>
           </div>
         </div>
@@ -30,12 +30,8 @@
     </div>
     <div class="mainbox">
       <div class="recommend-title" v-if="product_list.brands">
-        <div
-          class="recommend-text"
-          v-for="(item, index) in product_list.brands"
-          :key="index"
-        >
-          <img :src="item.image" />
+        <div class="recommend-text" v-for="(item, index) in product_list.brands" :key="index">
+          <img :src="item.image">
           <em>{{ item.name }}</em>
         </div>
       </div>
@@ -50,12 +46,7 @@
             :key="index"
           >
             <div class="lantern-item-img">
-              <img
-                data-v-f6a0fd68=""
-                :src="item.image"
-                class="image-view"
-                style=""
-              />
+              <img data-v-f6a0fd68 :src="item.image" class="image-view" style>
             </div>
             <p>{{ item.name }}</p>
           </div>
@@ -63,27 +54,19 @@
         <div class="card-wrap" v-if="product_list.categoryArea.tileArea">
           <img
             :src="item.image"
-            alt=""
+            alt
             v-for="(item, index) in product_list.categoryArea.tileArea"
             :key="index"
-          />
+          >
         </div>
       </div>
       <div class="banner-img" v-if="product_list.banner">
-        <img
-          :src="item.path"
-          alt=""
-          v-for="item in product_list.banner"
-          :key="item.path"
-        />
+        <img :src="item.path" alt v-for="item in product_list.banner" :key="item.path">
       </div>
+      <!-- 调用不同的数据入口 -->
       <div class="productList" v-if="product_list.products">
-        <div
-          class="product-item"
-          v-for="(item, index) in product_list.products"
-          :key="index"
-        >
-          <GoodListCell :data="item" />
+        <div class="product-item" v-for="(item, index) in product_list.products" :key="index">
+          <GoodListCell :data="item"/>
         </div>
       </div>
       <div class="showall"></div>
