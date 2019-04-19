@@ -4,17 +4,17 @@
     <div class="classify-chart">
       <div class="classify-chart-img">
         <div class="chart-img">
-          <img :src="data.image" alt>
+          <img :src="data.image" :alt="data.name" :key="data.image">
           <div class="chart-text">满39减5</div>
         </div>
       </div>
       <div class="classify-chart-right">
-        <div class="classify-chart-title">澳洲黄尾红葡萄酒</div>
-        <div class="classify-chart-text">跟袋鼠一样 是澳洲的代名词</div>
+        <div class="classify-chart-title" v-text="data.name">澳洲黄尾红葡萄酒</div>
+        <div class="classify-chart-text" v-text="data.subtitle">跟袋鼠一样 是澳洲的代名词</div>
         <div class="classify-chart-others">
           <div class="classify-chart-price">
-            <p>￥199</p>
-            <p>￥699</p>
+            <p>￥{{ data.newPrice }}</p>
+            <p>￥{{ data.oldPrice }}</p>
           </div>
           <div class="classify-chart-chart">
             <img src="../assets/shopcart.png" alt>

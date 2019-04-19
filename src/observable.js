@@ -4,8 +4,7 @@ const state = Vue.observable({
   //底部导航栏
   footerBar: {
     activeItem: "index",
-    itemList: [
-      {
+    itemList: [{
         text: "首页",
         iconClass: "shouye",
         isbadge: false,
@@ -47,9 +46,14 @@ const state = Vue.observable({
       }
     ]
   },
+
   categoryList: [],
   categorydata: {},
-  activeCategory: ""
+  activeCategory: "",
+  // 存放分类页面商品信息
+  categoryList2: [],
+  categorydata2: {},
+  activeCategory2: "",
 });
 
 export default state;
