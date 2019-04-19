@@ -13,7 +13,7 @@
             <div class="cons-right-title">
               <!-- 引入组件ClassifySlide  -->
               <ClassifySlide
-                :classifySlides="categoryList2"
+                :classifySlides="categoryList"
                 @switchCategory="switchCategory"
                 :activeCategory="activeCategory2"
               />
@@ -76,7 +76,7 @@ export default {
     };
   },
   computed: {
-    categoryList2() {
+    categoryList() {
       return obstate.categoryList || {};
     },
     product_list() {
@@ -90,7 +90,6 @@ export default {
     //切换顶部分类，改变data中的product_list
     async switchCategory(id) {
       console.log(id);
-      // this.isShowDropBox = false;
       if (id != this.activeCategory2) {
         if (!obstate.categorydata2[id]) {
           let res = await api.get(
@@ -105,6 +104,30 @@ export default {
         }
       }
     },
+    // async switchCategory(id) {
+    //   // this.isShowDropBox = false;
+    //   if (id != this.activeCategory2) {
+    //     if (!obstate.categorydata2[id]) {
+    //       let res = await api.get(
+    //         "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/classify",
+    //         {
+    //           category_id: id,
+    //           page: 1,
+    //           num: 10
+    //         }
+    //       );
+
+    //       if (res.status >= 300 && res.statue < 400) {
+    //         obstate.activeCategory2 = id;
+    //       } else if (res.status == 200) {
+    //         obstate.categorydata2[id] = res.data.product_list;
+    //         obstate.activeCategory2 = id;
+    //       }
+    //     } else {
+    //       obstate.activeCategory2 = id;
+    //     }
+    //   }
+    // },
     // 点击显示或隐藏
     isShowSecond() {
       this.bool = !this.bool;

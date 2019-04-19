@@ -6,7 +6,7 @@
         v-for="(classify,index) in classifySlides"
         :key="index"
         :title="classify.name"
-        :class="{ 'van-tab__pane': classify.category_id == activeCategory }"
+        :class="{ 'van-tab__pane': classify.category_id == activeCategory2 }"
       >
         <p>{{classify.name}}</p>
         <!-- 内容 {{ index }} -->
@@ -28,7 +28,7 @@ export default {
       ellipsis: false
     };
   },
-  props: ["classifySlides", "activeCategory"],
+  props: ["classifySlides", "activeCategory2"],
   methods: {
     switchCategory(index) {
       // console.log(index);

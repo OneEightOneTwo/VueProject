@@ -39,6 +39,7 @@
       </div>
       <div class="form-submit">
         <button
+        @click="jump"
           :disabled="dis"
           :class="{ 'form-submit-btn': buttonIsActive }"
           class="form-submit-btn-disabled"
@@ -74,6 +75,7 @@
     </h2>
   </div>
 </template>
+<script src="../router.js"></script>
 <script>
 export default {
   data() {
@@ -90,6 +92,11 @@ export default {
     toggle() {
       this.bool = !this.bool;
       this.dis = false;
+    },
+    jump() {
+      this.$router.push({
+        path:"/home"
+      })
     }
   },
   computed: {
