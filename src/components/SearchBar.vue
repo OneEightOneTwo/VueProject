@@ -25,7 +25,7 @@ export default {
   },
   computed:{
     address(){
-      return obstate.currentRegion.address
+      return obstate.currentRegion.address || "每日优鲜"
     }
   }
 };

@@ -137,7 +137,7 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 49px;
+  bottom: 0px;
   display: flex;
   z-index: 2;
   flex-direction: column;

@@ -78,6 +78,7 @@ a.footer-active {
 .footer-bar {
   background-color: rgba(247, 247, 250, 0.95);
   position: fixed;
+  z-index: 9;
   bottom: 0;
   left: 0;
   right: 0;
