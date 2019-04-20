@@ -11,7 +11,7 @@
           v-model="num"
         />
         <div class="form-btn-code">
-          <button class="form-btn">获取验证码</button>
+          <button @click="refreshCode" class="form-btn">获取验证码</button>
         </div>
       </div>
       <div class="form-box">
@@ -22,7 +22,12 @@
           placeholder="输入验证码"
           class="form-input"
         />
-        <!---->
+        <s-identify
+          :Width="contentWidth"
+          class="code fr"
+          :identifyCode="identifyCode"
+          >{{ identifyCode }}</s-identify
+        >
       </div>
       <div class="form-protocol">
         <span
@@ -39,7 +44,7 @@
       </div>
       <div class="form-submit">
         <button
-        @click="jump"
+          @click="jump"
           :disabled="dis"
           :class="{ 'form-submit-btn': buttonIsActive }"
           class="form-submit-btn-disabled"
@@ -76,8 +81,17 @@
   </div>
 </template>
 <script src="../router.js"></script>
+
 <script>
+//引入随机验证码插件
+import Vue from "vue";
+import SIdentify from "../components/identify";
+Vue.use(SIdentify);
 export default {
+  components: {
+    SIdentify
+  },
+  name: "codetest",
   data() {
     return {
       bool: false,
@@ -85,7 +99,10 @@ export default {
       code: "",
       phonestatus: false,
       codestatus: false,
-      dis: true
+      dis: true,
+      identifyCodes: "1234567890",
+      identifyCode: "",
+      contentWidth: "10"
     };
   },
   methods: {
@@ -95,8 +112,23 @@ export default {
     },
     jump() {
       this.$router.push({
-        path:"/home"
-      })
+        path: "/home"
+      });
+    },
+    randomNum(min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+    },
+    refreshCode() {
+      this.identifyCode = "";
+      this.makeCode(this.identifyCodes, 4);
+    },
+    makeCode(o, l) {
+      for (let i = 0; i < l; i++) {
+        this.identifyCode += this.identifyCodes[
+          this.randomNum(0, this.identifyCodes.length)
+        ];
+      }
+      // console.log(this.identifyCode);
     }
   },
   computed: {
@@ -104,6 +136,10 @@ export default {
       return this.phonestatus && this.codestatus && this.bool;
     }
   }, //监听手机号和验证码的格式
+  mounted() {
+    this.identifyCode = "";
+    this.makeCode(this.identifyCodes, 4);
+  },
   watch: {
     num(newv, old) {
       this.phonestatus = /^1[34578]\d{9}$/.test(newv);
@@ -183,7 +219,6 @@ export default {
   }
   .verify-phone .form-submit {
     margin-top: 20px;
-
     .form-submit-btn-disabled {
       background: #b8b3ba;
       width: 315px;
@@ -207,5 +242,3 @@ export default {
   }
 }
 </style>
-
-
