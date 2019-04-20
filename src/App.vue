@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-    <keep-alive include="home">
+    <keep-alive>
       <router-view />
     </keep-alive>
   </div>
 </template>
 <script>
-//头部组件
+import obstate from "./observable.js";
 export default {
   name: "app",
-  components: {}
+  components: {},
+  methods: {},
+ 
 };
 </script>
 

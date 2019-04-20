@@ -50,6 +50,14 @@ const state = Vue.observable({
   categoryList: [],
   categorydata: {},
   activeCategory: "",
+  currentRegion: {
+    city: "广州市",
+    address: "",
+    building: "每日优鲜",
+    lat: "", //纬度
+    lng: "", //经度
+    adcode: ""
+  },
   // 存放分类页面商品信息
   // categorydata2: {},
   // activeCategory2: "",

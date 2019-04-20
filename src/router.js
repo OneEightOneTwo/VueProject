@@ -1,15 +1,16 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Index from "./views/Home/Index.vue";
-import Classify from "./views/Home/Classify.vue";
-import Discove from "./views/Home/Discove.vue";
-import ShopCar from "./views/Home/Shopcar.vue";
-import Mine from "./views/Home/Mine.vue";
+// import Index from "./views/Home/Index.vue";
+// import Classify from "./views/Home/Classify.vue";
+// import Discove from "./views/Home/Discove.vue";
+// import ShopCar from "./views/Home/Shopcar.vue";
+// import Mine from "./views/Home/Mine.vue";
 import Search from "./views/Search.vue";
 import Login from "./views/Login.vue";
 import Home from "./views/Home.vue";
 import Product from "./views/Product.vue";
-
+import Location from "./views/Location.vue";
+import SearchLocation from "./views/SearchLocation.vue";
 //TODO 访问路由时再切换footbar的状态
 Vue.use(Router);
 let router = new Router({
@@ -25,7 +26,7 @@ let router = new Router({
       path: "/home",
       name: "home",
       // redirect: "/home/index",
-      component: Home,
+      component: Home
       // children: [
       //   {
       //     path: "index",
@@ -68,6 +69,16 @@ let router = new Router({
       path: "/product",
       name: "product",
       component: Product
+    },
+    {
+      path: "/location",
+      name: "location",
+      component: Location,
+    },
+    {
+      path: "/searchlocation",
+      name: "searchlocation",
+      component: SearchLocation
     }
   ]
 });

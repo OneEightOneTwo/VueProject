@@ -1,11 +1,6 @@
 <template>
   <div id="product" :key="productInfo.goodId">
-    <div class="product-header">
-      <div class="goback" @click="routerBack">
-        <Svgicon icon-class="fanhui" class="icon" />
-      </div>
-      <span>商品详情</span>
-    </div>
+    <CommonTitle title="商品详情" :isShowLeft="true" showIconClass="fanhui"/>
     <div class="product-content">
       <div class="carousel">
         <Carousel :imgList="productInfo.carsourlImgList" />
@@ -52,8 +47,7 @@
 <script>
 import api from "../axios/api.js";
 import Carousel from "../components/swiper-carousel";
-import Svgicon from "../components/SvgIcon";
-
+import CommonTitle from "../components/CommonTitle"
 export default {
   data() {
     return {
@@ -61,8 +55,8 @@ export default {
     };
   },
   components: {
-    Svgicon,
-    Carousel
+    Carousel,
+    CommonTitle
   },
   methods: {
     routerBack() {
@@ -87,25 +81,7 @@ export default {
 </script>
 <style lang="scss">
 #product {
-  .product-header {
-    position: fixed;
-    width: 100%;
-    height: 44px;
-    z-index: 2;
-    background-color: #fff;
-    line-height: 44px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
-    .goback {
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .icon {
-      font-size: 22px;
-    }
-  }
+  
   .product-content {
     position: fixed;
     top: 44px;
