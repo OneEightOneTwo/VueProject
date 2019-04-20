@@ -51,8 +51,8 @@ const state = Vue.observable({
   categorydata: {},
   activeCategory: "",
   // 存放分类页面商品信息
-  categorydata2: {},
-  activeCategory2: "",
+  // categorydata2: {},
+  // activeCategory2: "",
 });
 
 export default state;

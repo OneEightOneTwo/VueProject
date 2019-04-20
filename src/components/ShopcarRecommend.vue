@@ -3,68 +3,16 @@
     <!-- 购物车 产品推荐 模块 -->
     <div class="shopcarRecommend">
       <ul>
-        <li>
+        <li v-for="(item,index) in goods" :key="index">
           <div class="recommend-goods-img">
-            <img src="../assets/recommendgoods.jpg" alt>
+            <img :src="item.goodsPic" alt>
           </div>
-          <div class="recommend-goods-title">澳洲黄尾袋鼠梅洛红葡萄酒750ml</div>
-          <div class="recommend-goods-text">跟袋鼠一样 是澳洲的代名词</div>
+          <div class="recommend-goods-title" v-text="item.title">澳洲黄尾袋鼠梅洛红葡萄酒750ml</div>
+          <div class="recommend-goods-text" v-text="item.subtitle">跟袋鼠一样 是澳洲的代名词</div>
           <div class="recommend-goods-price">
-            <span>￥699</span>
+            <span>￥{{item.salePrice}}</span>
             <span>
-              <img src="../assets/shopcart.png" alt>
-            </span>
-          </div>
-        </li>
-        <li>
-          <div class="recommend-goods-img">
-            <img src="../assets/recommendgoods.jpg" alt>
-          </div>
-          <div class="recommend-goods-title">澳洲黄尾袋鼠梅洛红葡萄酒750ml</div>
-          <div class="recommend-goods-text">跟袋鼠一样 是澳洲的代名词</div>
-          <div class="recommend-goods-price">
-            <span>￥699</span>
-            <span>
-              <img src="../assets/shopcart.png" alt>
-            </span>
-          </div>
-        </li>
-        <li>
-          <div class="recommend-goods-img">
-            <img src="../assets/recommendgoods.jpg" alt>
-          </div>
-          <div class="recommend-goods-title">澳洲黄尾袋鼠梅洛红葡萄酒750ml</div>
-          <div class="recommend-goods-text">跟袋鼠一样 是澳洲的代名词</div>
-          <div class="recommend-goods-price">
-            <span>￥699</span>
-            <span>
-              <img src="../assets/shopcart.png" alt>
-            </span>
-          </div>
-        </li>
-        <li>
-          <div class="recommend-goods-img">
-            <img src="../assets/recommendgoods.jpg" alt>
-          </div>
-          <div class="recommend-goods-title">澳洲黄尾袋鼠梅洛红葡萄酒750ml</div>
-          <div class="recommend-goods-text">跟袋鼠一样 是澳洲的代名词</div>
-          <div class="recommend-goods-price">
-            <span>￥699</span>
-            <span>
-              <img src="../assets/shopcart.png" alt>
-            </span>
-          </div>
-        </li>
-        <li>
-          <div class="recommend-goods-img">
-            <img src="../assets/recommendgoods.jpg" alt>
-          </div>
-          <div class="recommend-goods-title">澳洲黄尾袋鼠梅洛红葡萄酒750ml</div>
-          <div class="recommend-goods-text">跟袋鼠一样 是澳洲的代名词</div>
-          <div class="recommend-goods-price">
-            <span>￥699</span>
-            <span>
-              <img src="../assets/shopcart.png" alt>
+              <img :src="item.chartsPic" alt>
             </span>
           </div>
         </li>
@@ -73,7 +21,20 @@
   </div>
 </template>
 <script>
-export default {};
+import api from "../axios/api.js";
+export default {
+  data() {
+    return {
+      goods: []
+    };
+  },
+  async created() {
+    let res = await api.get(
+      "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/classify/fruits"
+    );
+    this.goods = res.data.data[0].articles;
+  }
+};
 </script>
 <style lang="scss">
 .shopcarRecommend {
@@ -82,6 +43,7 @@ export default {};
   margin: auto;
   ul {
     overflow: hidden;
+    margin-bottom: 50px;
     li {
       float: left;
       width: 46%;

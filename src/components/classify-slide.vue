@@ -10,11 +10,6 @@
       >
         <p>{{classify.name}}</p>
         <!-- 内容 {{ index }} -->
-        <!-- <span
-          class="swiper-text"
-          :class="{ 'van-tab__pane': classify.category_id == activeCategory }"
-          @click="switchCategory(classify.category_id)"
-        ></span>-->
       </van-tab>
     </van-tabs>
   </div>
