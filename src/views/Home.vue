@@ -2,12 +2,12 @@
   <div>
     <!-- <keep-alive>
       <router-view />
-    </keep-alive> -->
+    </keep-alive>-->
     <!-- 动态组件 -->
     <keep-alive>
       <component :is="componentName"></component>
     </keep-alive>
-    <VfooterBar />
+    <VfooterBar/>
   </div>
 </template>
 <script>
@@ -46,7 +46,7 @@ export default {
         lng: ""
       }
     );
-    console.log(res);
+    // console.log(res);
     obstate.categoryList = res.data.category_list;
     // 请求接口，获取index页面数据
     for (let i = 0; i < obstate.categoryList.length; i++) {

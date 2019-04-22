@@ -2,36 +2,36 @@
   <div class="buybox">
     <div class="shopCar_wrap">
       <div class="shopCar-checkbox">
-        <img class="s-" src="../assets/checkbox.png" alt>
+        <img class="s-" :src="bool?noSelected:selected" @clcik="selectedAll" alt>
       </div>
       <p>
         <span>次日到达</span>
-        <span>包邮</span>
+        <span>删除</span>
       </p>
     </div>
     <!-- 购物车渲染 -->
-    <div class="shopCar-buybox">
+    <div class="shopCar-buybox" v-for="(good,index) in goods" :key="index">
       <div class="buybox-context">
         <div class="buybox-checkbox">
-          <img class="s-" src="../assets/checkbox.png" alt>
+          <img class="s-" :src="good.bool?noSelected:selected" @click="good.bool=!good.bool" alt>
         </div>
         <div class="buybox-main">
           <div class="buybox-img">
-            <img src="../assets/products001.png" @click="totalPrice" alt>
+            <img :src="good.goodsPic" alt>
           </div>
           <div class="buybox-cons">
-            <div class="buybox-title">供港烟台苹果4个760g起</div>
+            <div class="buybox-title" v-text="good.title"></div>
             <div class="buybox-coupon">满69减10</div>
             <div class="buybox-oldprice">
-              <span>￥79</span>
+              <span>￥{{good.salePrice}}</span>
               <span>会员8.9折</span>
             </div>
             <div class="buybox-count">
-              <div class="buybox-saleprice">￥89</div>
+              <div class="buybox-saleprice">￥{{good.price}}</div>
               <div class="buybox-nums">
-                <div class="cutnum" @click="cutNum">-</div>
-                <input class="nownum" type="text" :value="num" style="width:30px">
-                <div class="addnum" @click="addNum">+</div>
+                <div class="cutnum" @click="cutNum(index)">-</div>
+                <input class="nownum" type="text" :value="good.minNum" style="width:30px">
+                <div class="addnum" @click="addNum(index)">+</div>
               </div>
             </div>
           </div>
@@ -45,7 +45,7 @@
       <div class="shopcar-count">
         <div class="count-price">
           <div class="count-price-left">商品总价</div>
-          <div class="count-price-right" v-text="totalPrice">￥156.2</div>
+          <div class="count-price-right">￥{{sum}}</div>
         </div>
         <div class="count-coupons">
           <div class="count-coupons-left">商品券</div>
@@ -57,7 +57,7 @@
         </div>
         <div class="count-pay">
           <div class="count-pay-left">商品实付</div>
-          <div class="count-pay-right">￥156.2</div>
+          <div class="count-pay-right">￥{{sum}}</div>
         </div>
         <div class="count-shipping">
           <div class="count-shipping-left">配送费</div>
@@ -66,7 +66,7 @@
         <div class="count-total">
           <div class="count-total-right">
             <span>合计</span>
-            <span style="color:red">￥156.2</span>
+            <span style="color:red">￥{{sum}}</span>
           </div>
         </div>
       </div>
@@ -75,11 +75,16 @@
 </template>
 <script>
 import ShopcarAds from "./ShopcarAds.vue";
-// import api from "../axios/api.js";
+import api from "../axios/api.js";
+import { isIP } from "net";
+// import axios from "axios";
 export default {
   data() {
     return {
-      num: 1
+      goods: [],
+      bool: true,
+      selected: require("../assets/s-checkbox.png"),
+      noSelected: require("../assets/checkbox.png")
     };
   },
   components: {
@@ -87,33 +92,61 @@ export default {
   },
   methods: {
     // 数量增加
-    addNum(num) {
-      this.num++;
+    addNum(index) {
+      this.goods[index].minNum++;
+
       // 设置数量最大值
-      if (this.num >= 100) {
-        this.num = 100;
+      if (this.goods[index].minNum >= this.goods[index].maxNum) {
+        this.goods[index].minNum = this.goods[index].maxNum;
       }
     },
     // 数量减少
-    cutNum(num) {
-      this.num--;
+    cutNum(index) {
+      this.goods[index].minNum--;
       // 设置数量最小值
-      if (this.num <= 1) {
-        this.num = 1;
+      if (this.goods[index].minNum <= 1) {
+        this.goods[index].minNum = 1;
       }
     },
+
+    // 选中
+    // checked(index) {
+    //   this.goods[index].bool = !this.goods[index].bool;
+    //   // 计算单个总价
+    //   console.log(this.goods[index].salePrice);
+    //   console.log(this.goods[index].minNum);
+    //   if (this.goods[index].bool == false) {
+    //     return this.goods[index].salePrice * this.goods[index].minNum;
+    //     console.log(this.goods[index].salePrice);
+    //   }
+    // },
+
+    // 全选中
+    selectedAll() {}
+  },
+  computed: {
     // 计算总价
-    totalPrice(price, num) {
-      this.totalPrice = (price * num).toFixed(2);
-      console.log(this.totalPrice);
+    sum() {
+      var total = 0;
+      for (var i = 0; i < this.goods.length; i++) {
+        if (!this.goods[i].bool) {
+          total +=
+            (Number(this.goods[i].minNum) * this.goods[i].salePrice).toFixed(
+              2
+            ) * 100;
+        }
+      }
+      return total / 100;
     }
+  },
+  // 购物车 数据请求接口
+  async created() {
+    let res = await api.get(
+      "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/buybox"
+    );
+
+    this.goods = res.data.data[0].articles;
   }
-  // async created() {
-  //   let res = await api.get(
-  //     "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/classify/fruits"
-  //   );
-  //   this.goods = res.data.data[0].articles;
-  // }
 };
 </script>
 
@@ -215,17 +248,19 @@ export default {
               height: 12px;
               font-size: 10px;
               color: rgb(77, 76, 76);
+              margin-right: 10px;
             }
             span:nth-child(2) {
               display: inline-block;
               width: 64px;
               height: 14px;
               font-size: 12px;
-              line-height: 14px;
+              line-height: 12px;
               text-align: center;
               color: rgb(235, 85, 85);
               border: 1px solid rgb(235, 85, 85);
               border-radius: 2px;
+              margin-left: 10px;
             }
           }
           .buybox-count {

@@ -329,13 +329,13 @@ export default {
       "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/classify/hotsale"
     );
     this.hotGoods = res.data.data[0].articles;
-    // console.log(this.hotGoods);
+   
     // 新鲜蔬果 数据
     let res1 = await api.get(
       "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/classify/fruits"
     );
     this.fruits = res1.data.data[0].articles;
-    // console.log(this.fruits);
+  
   }
 };
 </script>
