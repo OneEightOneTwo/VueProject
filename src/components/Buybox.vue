@@ -109,18 +109,6 @@ export default {
       }
     },
 
-    // 选中
-    // checked(index) {
-    //   this.goods[index].bool = !this.goods[index].bool;
-    //   // 计算单个总价
-    //   console.log(this.goods[index].salePrice);
-    //   console.log(this.goods[index].minNum);
-    //   if (this.goods[index].bool == false) {
-    //     return this.goods[index].salePrice * this.goods[index].minNum;
-    //     console.log(this.goods[index].salePrice);
-    //   }
-    // },
-
     // 全选中
     selectedAll() {}
   },
