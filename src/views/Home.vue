@@ -38,14 +38,18 @@ export default {
     Mine
   },
   async created() {
-    //发送定位信息
-    let res = await api.get(
-      "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/index/init",
-      {
-        lat: "",
-        lng: ""
+    //获取定位信息
+    console.log(1)
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        console.log(2)
+        console.log(position);
+      },
+      err => {
+        console.log(err);
       }
     );
+<<<<<<< HEAD
     // console.log(res);
     obstate.categoryList = res.data.category_list;
     // 请求接口，获取index页面数据
@@ -57,6 +61,54 @@ export default {
         break;
       }
     }
+=======
+    // console.log(3);
+    this.$axios
+      .get(
+        "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/index/init",
+        {
+          params: {
+            lat: "",
+            lng: ""
+          }
+        }
+      )
+      .then(res => {
+        obstate.categoryList = res.data.category_list;
+        // 请求接口，获取index页面数据
+        for (let i = 0; i < obstate.categoryList.length; i++) {
+          if (obstate.categoryList[i].default === 1) {
+            obstate.categorydata[obstate.categoryList[i].category_id] =
+              res.data.product_list;
+            obstate.activeCategory = obstate.categoryList[i].category_id;
+            break;
+          }
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    // //发送定位信息
+    // let res = await api.get(
+    //   "https://www.fastmock.site/mock/b01715d2047cd2decb86ff0799e9d85a/vue/index/init",
+    //   {
+    //     lat: "",
+    //     lng: ""
+    //   }
+    // );
+    // console.log(res);
+    // obstate.categoryList = res.data.category_list;
+    // // 请求接口，获取index页面数据
+    // for (let i = 0; i < obstate.categoryList.length; i++) {
+    //   if (obstate.categoryList[i].default === 1) {
+    //     obstate.categorydata[obstate.categoryList[i].category_id] =
+    //       res.data.product_list;
+    //     obstate.activeCategory = obstate.categoryList[i].category_id;
+    //     break;
+    //   }
+    // }
+>>>>>>> c2fea00ab2cce0ce66b06f672200293bc328ee89
   }
 };
 </script>

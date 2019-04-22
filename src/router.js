@@ -73,7 +73,7 @@ let router = new Router({
     {
       path: "/location",
       name: "location",
-      component: Location,
+      component: Location
     },
     {
       path: "/searchlocation",

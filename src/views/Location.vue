@@ -59,7 +59,7 @@ export default {
     },
     onError(data) {
       this.getDataStatus = true;
-      _this.tipInfo = "定位失败";
+      this.tipInfo = "定位失败";
       obstate.locationInfo = data;
     },
     refreshLocation() {
